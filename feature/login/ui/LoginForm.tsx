@@ -16,7 +16,7 @@ const LoginForm = () => {
                 <label htmlFor="password">비밀번호</label>
                 <input type="password" name="password" id="password" />
             </div>
-            {state?.message && <p>{state?.message}</p>}
+            {state?.message && <p>{state.message}</p>}
             <button type="submit" disabled={isPending}>{isPending ? '로그인 중...' : '로그인'}</button>
         </form>
     );
