@@ -16,8 +16,8 @@ const LoginForm = () => {
                     type="text"
                     name="id"
                     id="id"
-                    aria-invalid={!!state?.message}
-                    aria-describedby={state?.message ? "login-error" : undefined}
+                    aria-invalid={!!state?.success}
+                    aria-describedby={state?.success ? "login-error" : undefined}
                 />
             </div>
 
@@ -29,8 +29,8 @@ const LoginForm = () => {
                         type={showPassword ? "text" : "password"}
                         name="password"
                         id="password"
-                        aria-invalid={!!state?.message}
-                        aria-describedby={state?.message ? "login-error" : undefined}
+                        aria-invalid={!!state?.success}
+                        aria-describedby={state?.success ? "login-error" : undefined}
                     />
                     <button
                         type="button"
