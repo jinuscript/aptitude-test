@@ -59,9 +59,13 @@
 //     }
 // }
 
+import fs from 'fs/promises';
+import path from 'path';
+
 import { NextResponse } from 'next/server';
 
 import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
+import { type User } from '@/shared/types/User';
 
 export async function POST(request: Request) {
     try {
@@ -72,7 +76,15 @@ export async function POST(request: Request) {
             return NextResponse.json({ message: ERROR_MESSAGES.INVALID_INPUT }, { status: 400 });
         }
 
-        if (id !== 'test' || password !== '12345678') {
+        // DB 로직
+        const DB_PATH = path.join(process.cwd(), 'db/users.json');
+        const users = await fs.readFile(DB_PATH, 'utf-8');
+        const usersData = JSON.parse(users);
+
+        const user = usersData.find((user: User) => user.id === id);
+
+        // 유저 정보 확인
+        if (!user || user.password !== password) {
             return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
         }
 
