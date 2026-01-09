@@ -39,7 +39,7 @@ export async function POST(request: Request) {
             .setExpirationTime('15m')
             .sign(SECRET);
 
-        const refreshToken = await new SignJWT({ id: user.id })
+        const refreshToken = await new SignJWT({ id: user.id, sid: "MOCK_SID" })
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
             .setExpirationTime('7d')
