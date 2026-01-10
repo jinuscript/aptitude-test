@@ -9,7 +9,7 @@ import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
 import { type User } from '@/shared/types/User';
 
 // JWT 토큰 시그니처
-const SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+import { JWT_SECRET } from '@/shared/constants/auth';
 
 export async function POST(request: Request) {
     try {
@@ -37,13 +37,13 @@ export async function POST(request: Request) {
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
             .setExpirationTime('15m')
-            .sign(SECRET);
+            .sign(JWT_SECRET);
 
         const refreshToken = await new SignJWT({ id: user.id, sid: "MOCK_SID" })
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
             .setExpirationTime('7d')
-            .sign(SECRET);
+            .sign(JWT_SECRET);
 
         return NextResponse.json({ success: true, accessToken, refreshToken }, { status: 200 });
 
