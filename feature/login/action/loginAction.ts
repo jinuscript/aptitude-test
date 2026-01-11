@@ -19,7 +19,7 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
 
     const { id, password } = validatedFields.data;
 
-    const response = await fetch('/api/login', {
+    const response = await fetch(`${process.env.BASE_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, password }),

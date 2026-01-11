@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-export async function refreshTokens() {
+export const refreshTokens = async () => {
     const cookieStore = await cookies();
     const refreshToken = cookieStore.get('refreshToken')?.value;
 
@@ -9,7 +9,7 @@ export async function refreshTokens() {
     }
 
     try {
-        const response = await fetch('/api/refresh', {
+        const response = await fetch(`${process.env.BASE_URL}/refresh`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ refreshToken })
