@@ -1,0 +1,36 @@
+import { NextResponse } from "next/server";
+import { jwtVerify } from 'jose';
+
+import { getUserPurchaseHistory } from "@/database/feature/getUserPurchaseHistory";
+import { ERROR_MESSAGES } from "@/shared/constants/errorMessages";
+
+const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+
+export async function GET(request: Request) {
+    try {
+        // 1. 액세스 토큰 추출
+        const authHeader = request.headers.get('Authorization');
+        const token = authHeader?.substring(7);
+
+        if (!token) {
+            return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
+        }
+
+        // 2. 액세스 토큰 검증
+        const { payload }: { payload: { user_id: string } } = await jwtVerify(token, JWT_SECRET);
+
+        if (!payload) {
+            return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
+        }
+
+        // 3. DB 로직
+        const userPurchaseHistory = await getUserPurchaseHistory(payload.user_id);
+
+
+        return NextResponse.json({
+            userPurchaseHistory
+        }, { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ message: ERROR_MESSAGES.SERVER_ERROR }, { status: 500 });
+    }
+}

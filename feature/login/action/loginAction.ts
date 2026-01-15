@@ -2,6 +2,7 @@
 
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
 import { LoginSchema, type LoginState } from '../model/loginModel';
 import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
 
@@ -28,10 +29,7 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
     const data = await response.json();
 
     if (!response.ok) {
-        return {
-            success: false,
-            message: data.message,
-        };
+        throw new Error(data.message);
     }
 
     // 2. 쿠키 생성
@@ -43,7 +41,7 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
             sameSite: "lax",
             secure: process.env.NODE_ENV === 'production',
             path: '/',
-            maxAge: 15 * 60,
+            maxAge: 60 * 60,
         });
 
         cookieStore.set('refreshToken', data.refreshToken, {
