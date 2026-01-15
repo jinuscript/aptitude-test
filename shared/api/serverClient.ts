@@ -1,7 +1,9 @@
+import 'server-only';
+
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
-export const apiClient = async (url: string, options: RequestInit = {}) => {
+export const serverClient = async (url: string, options: RequestInit = {}) => {
     const cookieStore = await cookies();
     const accessToken = cookieStore.get('accessToken')?.value;
 
@@ -13,7 +15,7 @@ export const apiClient = async (url: string, options: RequestInit = {}) => {
         headers['Authorization'] = `Bearer ${accessToken}`;
     }
 
-    const response = await fetch(process.env.BASE_URL + url, {
+    const response = await fetch(`${process.env.BASE_URL}${url}`, {
         ...options,
         headers,
     });
