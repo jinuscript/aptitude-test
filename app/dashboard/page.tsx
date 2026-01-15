@@ -1,10 +1,7 @@
-import TestButton from '@/feature/test/ui/TestButton';
-
-export default function DashboardPage() {
+export default async function DashboardPage() {
     return (
         <main>
             <h1>DashboardPage</h1>
-            <TestButton />
         </main>
     );
 }
