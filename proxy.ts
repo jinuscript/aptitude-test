@@ -14,7 +14,7 @@ export async function proxy(request: NextRequest) {
     // 2. 액세스 토큰은 없으나 리프레쉬 토큰이 있는 경우 (사일런트 리프레쉬)
     if (!accessToken && refreshToken) {
         try {
-            const response = await fetch(`${new URL(request.url).origin}/api/refresh`, {
+            const response = await fetch(`${new URL(request.url).origin}/api/backend/refresh`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ refreshToken }),

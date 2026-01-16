@@ -12,7 +12,7 @@ export async function GET(request: Request) {
             return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
         }
 
-        const response = await fetch(`${process.env.BASE_URL}/purchase-history`, {
+        const response = await fetch(`${process.env.BASE_URL}/order`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }

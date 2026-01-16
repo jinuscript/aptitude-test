@@ -4,7 +4,7 @@ export const getPurchaseHistoryQueryOptions = (
     fetcher: (url: string) => Promise<Response>
 ) => {
     return infiniteQueryOptions({
-        queryKey: ['purchase-history'],
+        queryKey: ['order'],
         queryFn: async ({ pageParam = 1 }) => {
             const res = await fetcher(`?page=${pageParam}`);
             if (!res.ok) {

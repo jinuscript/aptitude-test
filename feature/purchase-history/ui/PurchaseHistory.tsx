@@ -7,7 +7,7 @@ const PurchaseHistory = async () => {
     const queryClient = new QueryClient();
 
     await queryClient.prefetchInfiniteQuery(
-        getPurchaseHistoryQueryOptions((url) => serverClient(`/purchase-history${url}`))
+        getPurchaseHistoryQueryOptions((url) => serverClient(`/order${url}`))
     );
 
     return (
