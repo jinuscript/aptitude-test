@@ -8,7 +8,7 @@ const PurchaseHistoryList = () => {
     const {
         data
     } = useInfiniteQuery(
-        getPurchaseHistoryQueryOptions((url) => browserClient(`/proxy/purchase-history${url}`))
+        getPurchaseHistoryQueryOptions((url) => browserClient(`/proxy/order${url}`))
     );
 
 
