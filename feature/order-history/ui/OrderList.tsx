@@ -2,22 +2,28 @@
 
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { browserClient } from "@/shared/api/browserClient";
-import { getPurchaseHistoryQueryOptions } from "../model/purchaseHistoryQueryOptions";
+import { getOrderHistoryQueryOptions } from "../model/orderHistoryQueryOptions";
+import { type OrderItem } from "@/shared/types/OrderItem";
 
-const PurchaseHistoryList = () => {
+const OrderList = () => {
     const {
         data
     } = useInfiniteQuery(
-        getPurchaseHistoryQueryOptions((url) => browserClient(`/proxy/order${url}`))
+        getOrderHistoryQueryOptions((url) => browserClient(`/order${url}`))
     );
 
-
     return (
-        <ul></ul>
+        <ul>
+            {
+                data?.pages[0]?.userOrderHistory?.map((order: OrderItem) => (
+                    <li key={order.id}>{order.name}</li>
+                ))
+            }
+        </ul>
     );
 }
 
-export default PurchaseHistoryList;
+export default OrderList;
 
 
 

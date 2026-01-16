@@ -1,20 +1,20 @@
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import { serverClient } from "@/shared/api/serverClient";
-import { getPurchaseHistoryQueryOptions } from "../model/purchaseHistoryQueryOptions";
-import PurchaseHistoryList from "./PurchaseHistoryList";
+import { getOrderHistoryQueryOptions } from "../model/orderHistoryQueryOptions";
+import OrderList from "./OrderList";
 
-const PurchaseHistory = async () => {
+const OrderHistory = async () => {
     const queryClient = new QueryClient();
 
     await queryClient.prefetchInfiniteQuery(
-        getPurchaseHistoryQueryOptions((url) => serverClient(`/order${url}`))
+        getOrderHistoryQueryOptions((url) => serverClient(`/order${url}`))
     );
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <PurchaseHistoryList />
+            <OrderList />
         </HydrationBoundary>
     );
 };
 
-export default PurchaseHistory;
+export default OrderHistory;
