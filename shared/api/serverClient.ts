@@ -15,15 +15,10 @@ export const serverClient = async (url: string, options: RequestInit = {}) => {
         headers['Authorization'] = `Bearer ${accessToken}`;
     }
 
-    const response = await fetch(`${process.env.BASE_URL}${url}`, {
+    const response = await fetch(`${process.env.BASE_URL}/backend${url}`, {
         ...options,
         headers,
     });
-
-    // 만약 미들웨어를 통과했음에도 불구하고 401이 발생한다면 세션이 완전히 만료된 것임
-    if (response.status === 401) {
-        redirect('/login');
-    }
 
     return response;
 }

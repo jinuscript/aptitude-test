@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { jwtVerify } from 'jose';
 
-import { getUserPurchaseHistory } from "@/database/feature/getUserPurchaseHistory";
+import { getUserOrderHistory } from "@/database/feature/getUserOrderHistory";
 import { ERROR_MESSAGES } from "@/shared/constants/errorMessages";
 
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
@@ -24,11 +24,11 @@ export async function GET(request: Request) {
         }
 
         // 3. DB 로직
-        const userPurchaseHistory = await getUserPurchaseHistory(payload.user_id);
+        const userOrderHistory = await getUserOrderHistory(payload.user_id);
 
 
         return NextResponse.json({
-            userPurchaseHistory
+            userOrderHistory
         }, { status: 200 });
     } catch (error) {
         return NextResponse.json({ message: ERROR_MESSAGES.SERVER_ERROR }, { status: 500 });

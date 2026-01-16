@@ -12,20 +12,23 @@ export async function GET(request: Request) {
             return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
         }
 
-        const response = await fetch(`${process.env.BASE_URL}/order`, {
+        const response = await fetch(`${process.env.BASE_URL}/backend/order`, {
             headers: {
                 'Authorization': `Bearer ${accessToken}`
             }
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
-            throw new Error(`Backend returned status ${response.status}`);
+            throw new Error(data.message);
         }
 
-        const data = await response.json();
         return NextResponse.json(data, { status: 200 });
 
     } catch (error) {
-        return NextResponse.json({ message: ERROR_MESSAGES.SERVER_ERROR }, { status: 500 });
+        if (error instanceof Error) {
+            return NextResponse.json({ message: error.message }, { status: 500 });
+        }
     }
 }
