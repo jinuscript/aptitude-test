@@ -3,7 +3,8 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { browserClient } from "@/shared/api/browserClient";
 import { getOrderHistoryQueryOptions } from "../model/orderHistoryQueryOptions";
-import { type OrderItem } from "@/shared/types/OrderItem";
+// import { type OrderItem } from "@/shared/types/OrderItem";
+import OrderItem from "./OrderItem";
 
 const OrderList = () => {
     const {
@@ -12,11 +13,13 @@ const OrderList = () => {
         getOrderHistoryQueryOptions((url) => browserClient(`/order${url}`))
     );
 
+    const allOrders = data?.pages?.flatMap((page) => page.userOrderHistory);
+
     return (
         <ul>
             {
-                data?.pages[0]?.userOrderHistory?.map((order: OrderItem) => (
-                    <li key={order.id}>{order.name}</li>
+                allOrders?.map((order) => (
+                    <li key={order.id}><OrderItem order={order} /></li>
                 ))
             }
         </ul>
