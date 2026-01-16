@@ -1,5 +1,15 @@
 {
-    "admin": [],
+    "admin": [
+        {
+            "id": 1,
+            "product_id": "1",
+            "name": "초등용 앱티핏",
+            "purchase_date": "2026-01-12T10:00:00Z",
+            "test_finish_date": "",
+            "status": "IN_PROGRESS",
+            "current_step": "CAPABILITY"
+        }
+    ],
     "user": [
         {
             "id": 1,
