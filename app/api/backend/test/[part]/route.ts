@@ -37,3 +37,28 @@ export async function GET(
         return NextResponse.json({ message: "서버 오류" }, { status: 500 });
     }
 }
+
+export async function POST(request: Request) {
+    try {
+        // 1. 액세스 토큰 추출
+        const authHeader = request.headers.get('Authorization');
+        const token = authHeader?.substring(7);
+
+        if (!token) {
+            return NextResponse.json({ message: "액세스 토큰이 없습니다." }, { status: 401 });
+        }
+
+        // 2. 액세스 토큰 검증
+        const { payload } = await jwtVerify(token, JWT_SECRET) as { payload: { user_id: string } };
+
+        if (!payload) {
+            return NextResponse.json({ message: "액세스 토큰이 유효하지 않습니다." }, { status: 401 });
+        }
+
+        return NextResponse.json({ nextPart: "interest" }, { status: 200 });
+
+
+    } catch (error) {
+        return NextResponse.json({ message: "서버 오류" }, { status: 500 });
+    }
+}

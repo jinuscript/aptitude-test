@@ -1,29 +1,18 @@
 {
-    "admin": [
-        {
-            "id": 1,
-            "product_id": "1",
-            "name": "초등용 앱티핏",
-            "purchase_date": "2026-01-12T10:00:00Z",
-            "test_finish_date": "",
-            "status": "IN_PROGRESS",
-            "current_step": "CAPABILITY"
-        }
-    ],
     "user": [
         {
             "id": 1,
             "product_id": "1",
-            "name": "초등용 앱티핏",
+            "name": "초등용",
             "purchase_date": "2026-01-12T10:00:00Z",
             "test_finish_date": "",
-            "status": "IN_PROGRESS",
-            "current_step": "CAPABILITY"
+            "status": "NOT_STARTED",
+            "current_step": "STRENGTH"
         },
         {
             "id": 2,
             "product_id": "2",
-            "name": "중등용 앱티핏",
+            "name": "중등용",
             "purchase_date": "2026-01-13T10:00:00Z",
             "test_finish_date": "",
             "status": "IN_PROGRESS",
@@ -32,16 +21,7 @@
         {
             "id": 3,
             "product_id": "3",
-            "name": "고등용 앱티핏",
-            "purchase_date": "2026-01-13T10:00:00Z",
-            "test_finish_date": "2026-01-14T10:00:00Z",
-            "status": "COMPLETED",
-            "current_step": "RESULT"
-        },
-        {
-            "id": 4,
-            "product_id": "3",
-            "name": "고등용 앱티핏",
+            "name": "고등용",
             "purchase_date": "2026-01-13T10:00:00Z",
             "test_finish_date": "2026-01-14T10:00:00Z",
             "status": "COMPLETED",
