@@ -30,7 +30,7 @@ export default OrderList;
 
 
 
-// const allItems = data.pages.flatMap(page => page.items); 
+// const allItems = data.pages.flatMap(page => page.items);
 // // 2. Just render the list
 // allItems.map(item => <Item />)
 

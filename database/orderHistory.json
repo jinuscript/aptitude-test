@@ -37,6 +37,15 @@
             "test_finish_date": "2026-01-14T10:00:00Z",
             "status": "COMPLETED",
             "current_step": "RESULT"
+        },
+        {
+            "id": 4,
+            "product_id": "3",
+            "name": "고등용 앱티핏",
+            "purchase_date": "2026-01-13T10:00:00Z",
+            "test_finish_date": "2026-01-14T10:00:00Z",
+            "status": "COMPLETED",
+            "current_step": "RESULT"
         }
     ]
 }
