@@ -1,8 +1,9 @@
 import { testAction } from "../action/testAction";
 
-const TestForm = ({ questions, part }: { questions: { id: number; question: string }[], part: string }) => {
+const TestForm = ({ questions, test_id, part }: { questions: { id: number; question: string }[], test_id: string, part: string }) => {
     return (
         <form action={testAction}>
+            <input type="hidden" name="test_id" value={test_id} />
             <input type="hidden" name="part" value={part} />
             {questions.map((q) => (
                 <div key={q.id}>
