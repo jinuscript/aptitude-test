@@ -38,7 +38,16 @@ export async function GET(
     }
 }
 
+const NEXT_PART_MAP: Record<string, string> = {
+    strength: "interest",
+    interest: "characteristic",
+    characteristic: "value",
+    value: "knowledge",
+    knowledge: "finish",
+};
+
 export async function POST(request: Request) {
+    const { part } = await request.json();
     try {
         // 1. 액세스 토큰 추출
         const authHeader = request.headers.get('Authorization');
@@ -54,9 +63,7 @@ export async function POST(request: Request) {
         if (!payload) {
             return NextResponse.json({ message: "액세스 토큰이 유효하지 않습니다." }, { status: 401 });
         }
-
-        return NextResponse.json({ nextPart: "interest" }, { status: 200 });
-
+        return NextResponse.json({ nextPart: NEXT_PART_MAP[part] }, { status: 200 });
 
     } catch (error) {
         return NextResponse.json({ message: "서버 오류" }, { status: 500 });
