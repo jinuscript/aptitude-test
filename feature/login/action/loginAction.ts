@@ -1,11 +1,11 @@
 'use server';
 
-import { cookies } from 'next/headers';
+import { setAuthCookies } from '@/shared/api/setAuthCookies';
 import { redirect } from 'next/navigation';
 
+import { HttpError } from '@/shared/api/HttpError';
 import { serverClient } from '@/shared/api/serverClient';
 import { LoginSchema, type LoginState } from '../model/loginModel';
-import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
 
 const loginAction = async (prevState: LoginState | undefined, formData: FormData): Promise<LoginState | undefined> => {
     // 1. 로그인 통신
@@ -15,13 +15,11 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
     if (!validatedFields.success) {
         return {
             success: false,
-            message: ERROR_MESSAGES.INVALID_INPUT,
+            message: "입력값이 유효하지 않습니다."
         };
     }
 
     const { id, password } = validatedFields.data;
-
-    let isSuccess = false;
 
     try {
         const response = await serverClient('/login', {
@@ -32,48 +30,26 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
             body: JSON.stringify({ id, password }),
         });
 
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(data.message);
-        }
-
         // 2. 쿠키 생성
-        if (data.accessToken && data.refreshToken) {
-            const cookieStore = await cookies();
+        const { data: { accessToken, refreshToken } } = response;
 
-            cookieStore.set('accessToken', data.accessToken, {
-                httpOnly: true,
-                sameSite: "lax",
-                secure: process.env.NODE_ENV === 'production',
-                path: '/',
-                maxAge: 60 * 60,
-            });
-
-            cookieStore.set('refreshToken', data.refreshToken, {
-                httpOnly: true,
-                sameSite: "lax",
-                secure: process.env.NODE_ENV === 'production',
-                path: '/',
-                maxAge: 60 * 60 * 24 * 7,
-            });
+        if (accessToken && refreshToken) {
+            await setAuthCookies(accessToken, refreshToken);
         }
-
-        isSuccess = true;
-
     } catch (error) {
-        if (error instanceof Error) {
+        if (!(error instanceof HttpError)) {
             return {
                 success: false,
-                message: error.message
+                message: "서비스가 원활하지 않습니다. 잠시 후 다시 시도해주세요."
             };
         }
+        return {
+            success: false,
+            message: error.message,
+        };
     }
 
-    if (isSuccess) {
-        redirect('/dashboard');
-    }
-
+    redirect('/dashboard');
 }
 
 export default loginAction;
