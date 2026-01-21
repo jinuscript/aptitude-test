@@ -1,23 +1,24 @@
 import 'server-only';
 
-import { cookies } from 'next/headers';
+interface CookieStore {
+    set: (name: string, value: string, options: any) => void;
+}
 
-export const setAuthCookies = async (accessToken: string, refreshToken: string) => {
-    const cookieStore = await cookies();
+export const setAuthCookies = async (cookieStore: CookieStore, accessToken: string, refreshToken: string) => {
+    const cookieOptions = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax' as const,
+        path: '/',
+    };
 
     cookieStore.set('accessToken', accessToken, {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === 'production',
-        path: '/',
+        ...cookieOptions,
         maxAge: 60 * 60, // 1 hour
     });
 
     cookieStore.set('refreshToken', refreshToken, {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === 'production',
-        path: '/',
+        ...cookieOptions,
         maxAge: 60 * 60 * 24 * 7, // 7 days
     });
 };
