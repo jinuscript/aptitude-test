@@ -1,43 +1,49 @@
 import { NextResponse } from 'next/server';
-import { SignJWT, jwtVerify } from 'jose';
-import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
+import { jwtVerify } from 'jose';
+import { createAccessToken, createRefreshToken } from '../shared/utils/token';
 
-import { JWT_SECRET } from '@/shared/constants/auth';
+import { readJsonDb } from '@/app/api/database/shared/utils/readJsonDb';
+
+import { ERROR_MESSAGES } from '@/app/api/backend/shared/constants/errorMessages';
+import { JWT_SECRET } from '@/app/api/backend/shared/constants/jwtSecret';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
         const { refreshToken } = body;
 
+        // 입력값 확인
         if (!refreshToken) {
-            return NextResponse.json({ message: ERROR_MESSAGES.EXPIRED_TOKEN }, { status: 401 });
+            return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_TOKEN.code, message: ERROR_MESSAGES.INVALID_TOKEN.message, details: [] } }, { status: 401 });
         }
 
-        // 1. 리프레쉬 토큰 검증
-        const { payload } = await jwtVerify(refreshToken, JWT_SECRET);
-        const userId = payload.id as string;
+        // 리프레쉬 토큰 검증 - 실패하면 바로 catch로 이동
+        const { payload } = await jwtVerify(refreshToken, JWT_SECRET)
 
-        // 2. 새로운 액세스 토큰 생성
-        const accessToken = await new SignJWT({ id: userId, role: payload.role }) // 실제로는 DB에서 정보를 다시 가져오는 게 정석입니다.
-            .setProtectedHeader({ alg: 'HS256' })
-            .setIssuedAt()
-            .setExpirationTime('15m')
-            .sign(JWT_SECRET);
+        // DB에서 사용자 정보 조회
+        const userId = payload.user_id;
 
-        // 3. 새로운 리프레쉬 토큰 생성
-        const newRefreshToken = await new SignJWT({ id: userId, sid: payload.sid })
-            .setProtectedHeader({ alg: 'HS256' })
-            .setIssuedAt()
-            .setExpirationTime('7d')
-            .sign(JWT_SECRET);
+        const allUsers = await readJsonDb('app/api/database/data/user.json');
+        const user = allUsers.find((u: { user_id: string }) => u.user_id === userId);
+
+        if (!user) {
+            return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_TOKEN.code, message: ERROR_MESSAGES.INVALID_TOKEN.message, details: [] } }, { status: 401 });
+        }
+
+        // JWT 토큰 생성
+        const accessToken = await createAccessToken({ user_id: user.user_id, role: user.role, name: user.name });
+        const newRefreshToken = await createRefreshToken(user.user_id);
 
         return NextResponse.json({
             success: true,
-            accessToken,
-            refreshToken: newRefreshToken
+            data: {
+                accessToken,
+                refreshToken: newRefreshToken
+            },
+            error: null
         }, { status: 200 });
 
     } catch (error) {
-        return NextResponse.json({ message: ERROR_MESSAGES.EXPIRED_TOKEN }, { status: 401 });
+        return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_TOKEN.code, message: ERROR_MESSAGES.INVALID_TOKEN.message, details: [] } }, { status: 401 });
     }
 }

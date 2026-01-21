@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
 
-import { SignJWT } from 'jose';
+import { createAccessToken, createRefreshToken } from '../shared/utils/token';
+
+import { readJsonDb } from '@/app/api/database/shared/utils/readJsonDb';
 
 import { ERROR_MESSAGES } from '@/app/api/backend/shared/constants/errorMessages';
-import { readJsonDb } from '../../database/shared/utils/readJsonDb';
-
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET) || "MOCK_JWT_SECRET";
 
 export async function POST(request: Request) {
     try {
@@ -26,17 +25,8 @@ export async function POST(request: Request) {
         }
 
         // JWT 토큰 생성
-        const accessToken = await new SignJWT({ user_id: user.user_id, role: user.role, name: user.name })
-            .setProtectedHeader({ alg: 'HS256' })
-            .setIssuedAt()
-            .setExpirationTime('1h')
-            .sign(JWT_SECRET);
-
-        const refreshToken = await new SignJWT({ user_id: user.user_id, sid: "MOCK_SID" })
-            .setProtectedHeader({ alg: 'HS256' })
-            .setIssuedAt()
-            .setExpirationTime('7d')
-            .sign(JWT_SECRET);
+        const accessToken = await createAccessToken({ user_id: user.user_id, role: user.role, name: user.name });
+        const refreshToken = await createRefreshToken(user.user_id);
 
         return NextResponse.json({ success: true, data: { user, accessToken, refreshToken }, error: null }, { status: 200 });
 

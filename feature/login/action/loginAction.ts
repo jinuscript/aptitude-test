@@ -1,6 +1,7 @@
 'use server';
 
 import { setAuthCookies } from '@/shared/api/setAuthCookies';
+import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 import { HttpError } from '@/shared/api/HttpError';
@@ -34,7 +35,7 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
         const { data: { accessToken, refreshToken } } = response;
 
         if (accessToken && refreshToken) {
-            await setAuthCookies(accessToken, refreshToken);
+            await setAuthCookies(await cookies(), accessToken, refreshToken);
         }
     } catch (error) {
         if (!(error instanceof HttpError)) {
