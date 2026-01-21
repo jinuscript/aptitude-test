@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server';
 
 import { SignJWT } from 'jose';
 
-import { ERROR_MESSAGES } from '@/shared/constants/errorMessages';
-import { findUserById } from '@/database/feature/findUserById';
+import { ERROR_MESSAGES } from '@/app/api/backend/shared/constants/errorMessages';
+import { readJsonDb } from '../../database/shared/utils/readJsonDb';
 
-// JWT 토큰 시그니처
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET) || "MOCK_JWT_SECRET";
 
 export async function POST(request: Request) {
     try {
@@ -15,15 +14,14 @@ export async function POST(request: Request) {
 
         // 입력값 확인
         if (!user_id || !password) {
-            return NextResponse.json({ success: false, message: ERROR_MESSAGES.INVALID_INPUT }, { status: 400 });
+            return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_INPUT.code, message: ERROR_MESSAGES.INVALID_INPUT.message, details: [] } }, { status: 400 });
         }
 
         // DB 로직
         const user = await findUserById(user_id);
 
-        // 유저 정보 확인
-        if (!user || user.password !== password) {
-            return NextResponse.json({ success: false, message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
+                if (!user || user.password !== password) {
+            return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.AUTH_FAILED.code, message: ERROR_MESSAGES.AUTH_FAILED.message, details: [] } }, { status: 401 });
         }
 
         // JWT 토큰 생성 
@@ -39,9 +37,9 @@ export async function POST(request: Request) {
             .setExpirationTime('7d')
             .sign(JWT_SECRET);
 
-        return NextResponse.json({ success: true, user, accessToken, refreshToken }, { status: 200 });
+        return NextResponse.json({ success: true, data: { user, accessToken, refreshToken }, error: null }, { status: 200 });
 
     } catch (error) {
-        return NextResponse.json({ success: false, message: ERROR_MESSAGES.SERVER_ERROR }, { status: 500 });
+        return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.SERVER_ERROR.code, message: ERROR_MESSAGES.SERVER_ERROR.message, details: [] } }, { status: 500 });
     }
 }
