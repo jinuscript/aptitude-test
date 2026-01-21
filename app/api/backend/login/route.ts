@@ -17,14 +17,15 @@ export async function POST(request: Request) {
             return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_INPUT.code, message: ERROR_MESSAGES.INVALID_INPUT.message, details: [] } }, { status: 400 });
         }
 
-        // DB 로직
-        const user = await findUserById(user_id);
+        // DB에서 사용자 확인 및 비밀번호 비교
+        const allUsers = await readJsonDb('app/api/database/data/user.json');
+        const user = allUsers.find((u: { user_id: string }) => u.user_id === user_id);
 
-                if (!user || user.password !== password) {
+        if (!user || user.password !== password) {
             return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.AUTH_FAILED.code, message: ERROR_MESSAGES.AUTH_FAILED.message, details: [] } }, { status: 401 });
         }
 
-        // JWT 토큰 생성 
+        // JWT 토큰 생성
         const accessToken = await new SignJWT({ user_id: user.user_id, role: user.role, name: user.name })
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
