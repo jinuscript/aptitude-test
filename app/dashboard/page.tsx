@@ -1,10 +1,10 @@
-import OrderHistory from "@/feature/order-history/ui/OrderHistory";
+import UserTest from "@/feature/user-test/ui/UserTest";
 
 export default async function DashboardPage() {
     return (
         <main>
             <h1>DashboardPage</h1>
-            <OrderHistory />
+            <UserTest />
         </main>
     );
 }
