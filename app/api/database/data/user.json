@@ -1,17 +1,17 @@
 [
     {
-        "id": 1,
+        "id": "2dd0cfee-f181-4887-bd3f-8d30a1a7bb92",
         "user_id": "admin",
-        "role": "ADMIN",
         "password": "12345678",
+        "role": "ADMIN",
         "name": "운영자",
         "phone_number": "01012345678"
     },
     {
-        "id": 2,
+        "id": "770ce4c4-f51d-4430-8f5b-ae21bb32c43d",
         "user_id": "user",
-        "role": "USER",
         "password": "12345678",
+        "role": "USER",
         "name": "사용자",
         "phone_number": "01012345678"
     }
