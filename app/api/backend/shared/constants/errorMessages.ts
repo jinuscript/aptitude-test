@@ -19,5 +19,10 @@ export const ERROR_MESSAGES = {
         message: "서버에러 발생!",
         details: []
     },
+    TEST_NOT_FOUND: {
+        code: "TEST_NOT_FOUND",
+        message: "테스트를 찾을 수 없습니다.",
+        details: []
+    },
 } as const;
 
