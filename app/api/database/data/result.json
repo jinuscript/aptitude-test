@@ -1,0 +1,347 @@
+{
+    "name": "김진우",
+    "desired_major": "문화콘텐츠학",
+    "desired_percent": 61,
+    "major1": {
+        "major_title": "프랑스어·문학",
+        "result": {
+            "strength": {
+                "details": [
+                    {
+                        "field": "외국어능력",
+                        "score": 55,
+                        "content": "프랑스어를 유창하게 읽고 쓰고 말할 수 있는 '외국어능력'",
+                        "status": "보통"
+                    },
+                    {
+                        "field": "논리적 사고력",
+                        "score": 62,
+                        "content": "프랑스 문학의 내용을 논리적으로 분석하고 이해할 수 있는 '논리적 사고력'",
+                        "status": "보통"
+                    }
+                ],
+                "descriptions": [
+                    "김진우님은 프랑스어·문학과에 적합한 역량을 스스로 평가한 결과, 논리적 사고력과 글쓰기 능력에서 강점을 보입니다.",
+                    "예술적 표현력은 다소 부족할 수 있지만, 학업을 통해 보완해 나갈 수 있습니다."
+                ]
+            },
+            "value": {
+                "details": [
+                    {
+                        "field": "국제사회 기여",
+                        "score": 70,
+                        "content": "프랑스어와 문학을 통해 세계적인 소통과 협력을 촉진하며 '국제사회 기여'를 이룸.",
+                        "status": "높음"
+                    }
+                ],
+                "descriptions": [
+                    "프랑스어·문학과를 추천하는 이유는 김진우님이 중요하게 생각하는 국제사회 기여 가치와 잘 부합하기 때문입니다."
+                ]
+            },
+            "characteristic": {
+                "details": [
+                    {
+                        "field": "감성적인",
+                        "score": 55,
+                        "content": "문학 속 감정과 정서를 섬세하게 이해하며 표현하는 '감성적인' 사람.",
+                        "status": "보통"
+                    }
+                ],
+                "descriptions": [
+                    "김진우님은 감성적인 특성에서 높은 점수를 받았습니다. 이는 문학 작품을 깊이 이해하는 데 큰 장점이 됩니다."
+                ]
+            },
+            "knowledge": {
+                "details": [
+                    {
+                        "field": "프랑스어",
+                        "score": 70,
+                        "content": "나는 프랑스어의 기본 문법, 단어, 발음을 잘 알고 있다.",
+                        "status": "보통"
+                    }
+                ],
+                "descriptions": [
+                    "기존의 프랑스어 기초 지식이 탄탄하여 전공 학습에 유리합니다."
+                ]
+            },
+            "interests": {
+                "details": [
+                    {
+                        "field": "프랑스 가치관",
+                        "score": 100,
+                        "content": "프랑스 사람들이 중요하게 생각하는 가치는 무엇일까?",
+                        "status": "높음"
+                    }
+                ],
+                "descriptions": [
+                    "프랑스 문화와 가치관에 대한 높은 흥미가 학문적 성취로 이어질 가능성이 높습니다."
+                ]
+            }
+        },
+        "desired_result": {
+            "recommended_percent": 100,
+            "reasons_for_difference": [
+                "문화콘텐츠학과는 실용적 콘텐츠 제작에, 프랑스어·문학은 언어와 문학의 학문적 탐구에 중점을 둡니다."
+            ],
+            "compatibility_reasons": [
+                "창의적이고 논리적인 사고력이 문화콘텐츠학과의 요구 조건과 잘 맞습니다."
+            ],
+            "mismatch_factors": [
+                "진단 결과, 논리적 사고력과 글쓰기 능력이 프랑스어·문학과에서 더 큰 강점을 발휘할 것으로 보입니다."
+            ],
+            "convergence_talent": [
+                "프랑스어 능력은 글로벌 콘텐츠 기획 및 번역 분야에서 차별화된 무기가 될 수 있습니다."
+            ],
+            "future": [
+                "글로벌 문화 콘텐츠 기획자, 다국어 출판 기획자, 문화 교류 프로그램 개발자 등으로 진출할 수 있습니다."
+            ],
+            "university_info": [
+                {
+                    "region": "서울",
+                    "university_name": "서울대",
+                    "department_name": "불어불문학과",
+                    "link": "https://admission.snu.ac.kr/"
+                }
+            ],
+            "recommended_activities": [
+                {
+                    "subtitle": "프랑스 문학 작품 독서 및 토론",
+                    "content": "프랑스 문학 작품을 읽고 토론하며 문학적 요소를 깊이 이해합니다.",
+                    "example": "'어린왕자'를 읽고 상징성에 대해 토론해보세요."
+                }
+            ],
+            "school_activities": {
+                "objects": [
+                    "언어와 문화의 상호작용 탐구",
+                    "글로벌 커뮤니케이션 능력 향상"
+                ],
+                "recommended_activities": [
+                    {
+                        "subtitle": "프랑스 문화 체험",
+                        "content": "프랑스의 다양한 문화를 체험하고 발표합니다.",
+                        "example": "프랑스 요리 체험 후 식문화 발표"
+                    }
+                ]
+            },
+            "special_activities": [
+                {
+                    "category_subject": "세계사",
+                    "subject_name": "프랑스 혁명과 문학",
+                    "activities": "프랑스 혁명이 문학에 미친 영향을 조사하여 발표합니다."
+                }
+            ],
+            "subject_recommendations": {
+                "career_path_selectives": [
+                    "프랑스어Ⅱ",
+                    "여행 지리"
+                ],
+                "general_selectives": [
+                    "철학",
+                    "세계사"
+                ],
+                "common_subjects": [
+                    "국어",
+                    "영어",
+                    "사회"
+                ]
+            }
+        },
+        "career": [
+            {
+                "jobTitle": "대학교수",
+                "summary": "전문성을 바탕으로 연구를 수행하고 학생들을 가르치는 전문가",
+                "details": [
+                    {
+                        "title": "하는 일",
+                        "description": "강의 준비, 학생 지도, 전공 분야 연구",
+                        "content": "과정표 계획 및 조정, 세미나 수행"
+                    }
+                ]
+            }
+        ]
+    },
+    "major2": {
+        "major_title": "독일어·문학",
+        "result": {
+            "strength": {
+                "details": [],
+                "descriptions": []
+            },
+            "value": {
+                "details": [],
+                "descriptions": []
+            },
+            "characteristic": {
+                "details": [],
+                "descriptions": []
+            },
+            "knowledge": {
+                "details": [],
+                "descriptions": []
+            },
+            "interests": {
+                "details": [],
+                "descriptions": []
+            }
+        },
+        "desired_result": {
+            "recommended_percent": 85,
+            "reasons_for_difference": [],
+            "compatibility_reasons": [],
+            "mismatch_factors": [],
+            "convergence_talent": [],
+            "future": [],
+            "university_info": [],
+            "recommended_activities": [],
+            "school_activities": {
+                "objects": [],
+                "recommended_activities": []
+            },
+            "special_activities": [],
+            "subject_recommendations": {
+                "career_path_selectives": [],
+                "general_selectives": [],
+                "common_subjects": []
+            }
+        },
+        "career": []
+    },
+    "major3": {
+        "major_title": "국어국문학",
+        "result": {
+            "strength": {
+                "details": [],
+                "descriptions": []
+            },
+            "value": {
+                "details": [],
+                "descriptions": []
+            },
+            "characteristic": {
+                "details": [],
+                "descriptions": []
+            },
+            "knowledge": {
+                "details": [],
+                "descriptions": []
+            },
+            "interests": {
+                "details": [],
+                "descriptions": []
+            }
+        },
+        "desired_result": {
+            "recommended_percent": 80,
+            "reasons_for_difference": [],
+            "compatibility_reasons": [],
+            "mismatch_factors": [],
+            "convergence_talent": [],
+            "future": [],
+            "university_info": [],
+            "recommended_activities": [],
+            "school_activities": {
+                "objects": [],
+                "recommended_activities": []
+            },
+            "special_activities": [],
+            "subject_recommendations": {
+                "career_path_selectives": [],
+                "general_selectives": [],
+                "common_subjects": []
+            }
+        },
+        "career": []
+    },
+    "major4": {
+        "major_title": "심리학",
+        "result": {
+            "strength": {
+                "details": [],
+                "descriptions": []
+            },
+            "value": {
+                "details": [],
+                "descriptions": []
+            },
+            "characteristic": {
+                "details": [],
+                "descriptions": []
+            },
+            "knowledge": {
+                "details": [],
+                "descriptions": []
+            },
+            "interests": {
+                "details": [],
+                "descriptions": []
+            }
+        },
+        "desired_result": {
+            "recommended_percent": 75,
+            "reasons_for_difference": [],
+            "compatibility_reasons": [],
+            "mismatch_factors": [],
+            "convergence_talent": [],
+            "future": [],
+            "university_info": [],
+            "recommended_activities": [],
+            "school_activities": {
+                "objects": [],
+                "recommended_activities": []
+            },
+            "special_activities": [],
+            "subject_recommendations": {
+                "career_path_selectives": [],
+                "general_selectives": [],
+                "common_subjects": []
+            }
+        },
+        "career": []
+    },
+    "major5": {
+        "major_title": "사회복지학",
+        "result": {
+            "strength": {
+                "details": [],
+                "descriptions": []
+            },
+            "value": {
+                "details": [],
+                "descriptions": []
+            },
+            "characteristic": {
+                "details": [],
+                "descriptions": []
+            },
+            "knowledge": {
+                "details": [],
+                "descriptions": []
+            },
+            "interests": {
+                "details": [],
+                "descriptions": []
+            }
+        },
+        "desired_result": {
+            "recommended_percent": 70,
+            "reasons_for_difference": [],
+            "compatibility_reasons": [],
+            "mismatch_factors": [],
+            "convergence_talent": [],
+            "future": [],
+            "university_info": [],
+            "recommended_activities": [],
+            "school_activities": {
+                "objects": [],
+                "recommended_activities": []
+            },
+            "special_activities": [],
+            "subject_recommendations": {
+                "career_path_selectives": [],
+                "general_selectives": [],
+                "common_subjects": []
+            }
+        },
+        "career": []
+    }
+}
