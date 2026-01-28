@@ -1,0 +1,339 @@
+{
+  "c60f45ad-4475-4edc-aa8c-c145c66e3723": {
+    "testId": "c60f45ad-4475-4edc-aa8c-c145c66e3723",
+    "questions": {
+      "strength": [
+        {
+          "id": "S1",
+          "section": "strength",
+          "question": "역량1",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        },
+        {
+          "id": "S2",
+          "section": "strength",
+          "question": "역량2",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        }
+      ],
+      "interest": [
+        {
+          "id": "I1",
+          "section": "interest",
+          "question": "관심1",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        },
+        {
+          "id": "I2",
+          "section": "interest",
+          "question": "관심2",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        }
+      ],
+      "characteristic": [
+        {
+          "id": "C1",
+          "section": "characteristic",
+          "question": "특성1",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        },
+        {
+          "id": "C2",
+          "section": "characteristic",
+          "question": "특성2",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        }
+      ],
+      "value": [
+        {
+          "id": "V1",
+          "section": "value",
+          "question": "가치1",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        },
+        {
+          "id": "V2",
+          "section": "value",
+          "question": "가치2",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        }
+      ],
+      "knowledge": [
+        {
+          "id": "K1",
+          "section": "knowledge",
+          "question": "지식1",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        },
+        {
+          "id": "K2",
+          "section": "knowledge",
+          "question": "지식2",
+          "options": [
+            {
+              "value": 1,
+              "label": "전혀 그렇지 않다"
+            },
+            {
+              "value": 2,
+              "label": "그렇지 않다"
+            },
+            {
+              "value": 3,
+              "label": "보통이다"
+            },
+            {
+              "value": 4,
+              "label": "그렇다"
+            },
+            {
+              "value": 5,
+              "label": "매우 그렇다"
+            }
+          ]
+        }
+      ]
+    },
+    "answers": {
+      "strength": [
+        {
+          "questionId": "S1",
+          "answer": 1
+        },
+        {
+          "questionId": "S2",
+          "answer": 1
+        }
+      ],
+      "interest": [
+        {
+          "questionId": "I1",
+          "answer": 2
+        },
+        {
+          "questionId": "I2",
+          "answer": 1
+        }
+      ],
+      "characteristic": [
+        {
+          "questionId": "C1",
+          "answer": 3
+        },
+        {
+          "questionId": "C2",
+          "answer": 1
+        }
+      ],
+      "value": [
+        {
+          "questionId": "V1",
+          "answer": 2
+        },
+        {
+          "questionId": "V2",
+          "answer": 1
+        }
+      ],
+      "knowledge": [
+        {
+          "questionId": "K1",
+          "answer": 3
+        },
+        {
+          "questionId": "K2",
+          "answer": 3
+        }
+      ]
+    }
+  }
+}

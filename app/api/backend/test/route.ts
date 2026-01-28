@@ -14,7 +14,7 @@ export async function GET(request: Request) {
         const payload = await verifyAccessToken(accessToken);
 
         // DB에서 사용자 테스트 정보 조회
-        const allTests = await readJsonDb('app/api/database/data/test.json');
+        const allTests = await readJsonDb('app/api/database/data/test-summary.json');
         const userTests = allTests[payload.user_id];
 
         return NextResponse.json({
