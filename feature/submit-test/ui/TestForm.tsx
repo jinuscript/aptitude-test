@@ -1,23 +1,35 @@
 import { testAction } from "../action/testAction";
 
-const TestForm = ({ questions, test_id, part }: { questions: { id: number; question: string }[], test_id: string, part: string }) => {
+interface Question {
+    id: string;
+    section: "strength" | "interest" | "characteristic" | "value" | "knowledge";
+    question: "string";
+    options: {
+        value: number;
+        label: string;
+    }[];
+}
+
+const TestForm = ({ questions, testId, code, currentSection }: { questions: Question[], testId: string, code: string, currentSection: string }) => {
+
     return (
         <form action={testAction}>
-            <input type="hidden" name="test_id" value={test_id} />
-            <input type="hidden" name="part" value={part} />
+            <input type="hidden" name="testId" value={testId} />
+            <input type="hidden" name="code" value={code} />
+            <input type="hidden" name="currentSection" value={currentSection} />
             {questions.map((q) => (
                 <div key={q.id}>
                     <p>{q.question}</p>
                     <div>
-                        {[1, 2, 3, 4, 5].map((num) => (
-                            <label key={num}>
+                        {q.options.map((option) => (
+                            <label key={`${q.id}-${option.value}`}>
                                 <input
                                     type="radio"
-                                    name={`question-${q.id}`}
-                                    value={num}
+                                    name={`${q.id}`}
+                                    value={option.value}
                                     required
                                 />
-                                <span>{num}</span>
+                                <span>{option.label}</span>
                             </label>
                         ))}
                     </div>
