@@ -1,10 +1,17 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const NavigationBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    // 페이지 이동이 발생하면 모바일 메뉴를 닫음
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname])
 
     return (
         <nav className="flex justify-between items-center max-w-[1140px] mx-auto px-4 md:px-6 lg:px-8 py-2">
