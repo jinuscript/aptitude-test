@@ -2,7 +2,6 @@
 
 import { setAuthCookies } from '@/shared/api/setAuthCookies';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 
 import { HttpError } from '@/shared/api/HttpError';
 import { serverClient } from '@/shared/api/serverClient';
@@ -32,10 +31,16 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
         });
 
         // 2. 쿠키 생성
-        const { data: { accessToken, refreshToken } } = response;
+        const { data: { user, accessToken, refreshToken } } = response;
 
         if (accessToken && refreshToken) {
             await setAuthCookies(await cookies(), accessToken, refreshToken);
+        }
+
+        // 3. 유저 정보 반환
+        return {
+            success: true,
+            data: user
         }
     } catch (error) {
         if (!(error instanceof HttpError)) {
@@ -49,8 +54,6 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
             message: error.message,
         };
     }
-
-    redirect('/dashboard');
 }
 
 export default loginAction;
