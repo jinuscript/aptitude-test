@@ -13,6 +13,21 @@ const NavigationBar = () => {
         setIsOpen(false);
     }, [pathname])
 
+    // 데스크톱 화면으로 이동하면 모바일 메뉴를 닫음
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsOpen(false);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, [])
+
     return (
         <nav className="flex justify-between items-center max-w-[1140px] mx-auto px-4 md:px-6 lg:px-8 py-2">
             {/* 로고 */}
