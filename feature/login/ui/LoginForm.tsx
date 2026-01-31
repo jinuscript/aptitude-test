@@ -1,11 +1,22 @@
 'use client';
 
-import { useState, useActionState } from "react";
+import { useState, useEffect, useActionState } from "react";
+import { useRouter } from "next/navigation";
+import { useUserStore } from "@/widget/PrivateNavigation/model/useUserStore";
 import loginAction from "../action/loginAction";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [state, action, isPending] = useActionState(loginAction, undefined);
+    const setUser = useUserStore((state) => state.setUser);
+    const { push } = useRouter();
+
+    useEffect(() => {
+        if (state?.success && state?.data) {
+            setUser(state.data);
+            push('/dashboard');
+        }
+    }, [state]);
 
     return (
         <form action={action}>
