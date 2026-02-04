@@ -50,6 +50,10 @@ export async function proxy(request: NextRequest) {
             // 리프레쉬 토큰 만료 -> 로그인
             console.error(error);
 
+            // 쿠키 삭제
+            request.cookies.delete('accessToken');
+            request.cookies.delete('refreshToken');
+
             return NextResponse.redirect(new URL('/login', request.url));
         }
     }
