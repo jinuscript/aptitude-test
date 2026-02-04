@@ -1,6 +1,8 @@
 import 'server-only';
 
 import { cookies } from "next/headers";
+import { redirect } from 'next/navigation';
+
 import { HttpError } from './HttpError';
 
 export const serverClient = async (url: string, options: RequestInit = {}) => {
@@ -16,17 +18,25 @@ export const serverClient = async (url: string, options: RequestInit = {}) => {
         headers['Authorization'] = `Bearer ${accessToken}`;
     }
 
-    // API 호출
-    const response = await fetch(`${process.env.BASE_URL}/backend${url}`, {
-        ...options,
-        headers,
-    });
+    try {
+        // API 호출
+        const response = await fetch(`${process.env.BASE_URL}/backend${url}`, {
+            ...options,
+            headers,
+        });
 
-    const result = await response.json();
+        const result = await response.json();
 
-    if (!response.ok) {
-        throw new HttpError(response.status, result.error.code, result.error.message);
+        if (!response.ok) {
+            throw new HttpError(response.status, result.error.code, result.error.message);
+        }
+
+        return result;
+    } catch (error) {
+        if (error instanceof HttpError) {
+            if (error.status === 401) {
+                redirect('/login');
+            }
+        }
     }
-
-    return result;
 }
