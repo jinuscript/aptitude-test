@@ -1,6 +1,5 @@
 import { getResult } from "@/feature/result/api/getResult";
 
-
 const ResultPage = async ({ params }: { params: Promise<{ id: string, code: string }> }) => {
     const { id } = await params;
 
