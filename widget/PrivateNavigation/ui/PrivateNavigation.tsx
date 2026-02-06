@@ -1,5 +1,6 @@
 import Link from "next/link";
 import UserProfile from "./UserProfile";
+import LogoutButton from "@/feature/logout/ui/LogoutButton";
 
 const PrivateNavigation = () => {
     return (
@@ -9,6 +10,9 @@ const PrivateNavigation = () => {
 
             {/* 유저 프로필 */}
             <UserProfile />
+
+            {/* 로그아웃 버튼 */}
+            <LogoutButton />
         </nav>
     );
 };
