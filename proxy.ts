@@ -67,6 +67,7 @@ export const config = {
         '/login',
         '/dashboard/:path*',
         '/test/:path*',
-        '/result/:path*'
+        '/result/:path*',
+        '/purchase/:path*'
     ],
 };

@@ -1,31 +1,65 @@
 import { NextResponse } from "next/server";
-import { jwtVerify } from 'jose';
 
-import { getUserOrderHistory } from "@/database/feature/getUserOrderHistory";
-import { ERROR_MESSAGES } from "@/shared/constants/errorMessages";
+import { ERROR_MESSAGES } from '@/app/api/backend/shared/constants/errorMessages';
+import { getAccessToken, verifyAccessToken } from "@/app/api/backend/shared/utils/token";
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET);
+import { readJsonDb } from '@/app/api/database/shared/utils/readJsonDb';
+import { writeJsonDb } from '@/app/api/database/shared/utils/writeJsonDb';
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
+
+    const body = await request.json();
+    const { code, totalSection } = body;
+
     try {
-        // 1. 액세스 토큰 추출
-        const authHeader = request.headers.get('Authorization');
-        const token = authHeader?.substring(7);
+        // 액세스 토큰 추출 및 검증
+        const accessToken = getAccessToken(request);
 
-        if (!token) {
-            return NextResponse.json({ message: ERROR_MESSAGES.AUTH_FAILED }, { status: 401 });
+        const payload = await verifyAccessToken(accessToken);
+
+        // 상품 정보 조회
+        const product = await readJsonDb('app/api/database/data/product.json');
+        const productData = product.find((item: any) => item.code === code);
+
+        // 새로운 검사 요약 정보 생성
+        const newTestSummary = {
+            testId: crypto.randomUUID(),
+            userId: payload.user_id,
+            code: productData.code,
+            currentSection: productData.sectionList[0],
+            totalSection: productData.sectionList.length,
+            purchaseDate: new Date().toISOString(),
+            status: "NOT_STARTED"
         }
 
-        // 2. 액세스 토큰 검증
-        const { payload } = await jwtVerify(token, JWT_SECRET) as { payload: { user_id: string } };
+        const testSummary = await readJsonDb('app/api/database/data/test-summary.json');
 
-        // 3. DB 로직
-        const userOrderHistory = await getUserOrderHistory(payload.user_id);
+        const userTestSummary = testSummary[payload.user_id];
+        testSummary[payload.user_id] = [...userTestSummary, newTestSummary];
+
+        await writeJsonDb('app/api/database/data/test-summary.json', testSummary);
 
         return NextResponse.json({
-            userOrderHistory
+            success: true,
+            data: newTestSummary,
+            error: null
         }, { status: 200 });
+
     } catch (error) {
-        return NextResponse.json({ message: ERROR_MESSAGES.SERVER_ERROR }, { status: 500 });
+        if (error instanceof Error) {
+            if (error.message === "INVALID_TOKEN") {
+                return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_TOKEN.code, message: ERROR_MESSAGES.INVALID_TOKEN.message, details: [] } }, { status: 401 });
+            }
+        }
+        return NextResponse.json({
+            success: false,
+            data: null,
+            error: {
+                code: ERROR_MESSAGES.SERVER_ERROR.code,
+                message: ERROR_MESSAGES.SERVER_ERROR.message,
+                details: []
+            }
+        },
+            { status: 500 });
     }
 }
