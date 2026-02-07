@@ -2,7 +2,7 @@
 
 import { serverClient } from "@/shared/api/serverClient";
 
-export const orderAction = async () => {
+export const orderAction = async (code: string, totalSection: number) => {
     try {
         await serverClient('/order', {
             method: 'POST',
@@ -10,7 +10,8 @@ export const orderAction = async () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                code: 'MID',
+                code,
+                totalSection,
             }),
         });
 
