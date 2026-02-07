@@ -12,26 +12,29 @@ export async function POST(request: Request) {
     const { code, totalSection } = body;
 
     try {
-        // 액세스 토큰 추출& 검증
+        // 액세스 토큰 추출 및 검증
         const accessToken = getAccessToken(request);
 
-        // 액세스 토큰 검증
         const payload = await verifyAccessToken(accessToken);
 
-        // 새로운 테스트 요약 정보 생성
+        // 상품 정보 조회
+        const product = await readJsonDb('app/api/database/data/product.json');
+        const productData = product.find((item: any) => item.code === code);
+
+        // 새로운 검사 요약 정보 생성
         const newTestSummary = {
             testId: crypto.randomUUID(),
             userId: payload.user_id,
-            code: code,
-            currentSection: null,
-            totalSection: totalSection,
+            code: productData.code,
+            currentSection: productData.sectionList[0],
+            totalSection: productData.sectionList.length,
             purchaseDate: new Date().toISOString(),
             status: "NOT_STARTED"
         }
 
         const testSummary = await readJsonDb('app/api/database/data/test-summary.json');
 
-        const userTestSummary = testSummary[payload.user_id] || [];
+        const userTestSummary = testSummary[payload.user_id];
         testSummary[payload.user_id] = [...userTestSummary, newTestSummary];
 
         await writeJsonDb('app/api/database/data/test-summary.json', testSummary);

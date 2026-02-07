@@ -7,7 +7,7 @@ const PurchaseButton = ({ product }: { product: Product }) => {
     const { handleOrder } = useOrder();
 
     return (
-        <button onClick={() => handleOrder(product.code, product.totalSection)}>상품 구매</button>
+        <button onClick={() => handleOrder(product.code)}>상품 구매</button>
     );
 };
 

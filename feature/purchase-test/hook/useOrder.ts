@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 export const useOrder = () => {
     const router = useRouter();
 
-    const handleOrder = async (code: string, totalSection: number) => {
-        await orderAction(code, totalSection);
+    const handleOrder = async (code: string) => {
+        await orderAction(code);
         router.push('/dashboard');
     };
 
