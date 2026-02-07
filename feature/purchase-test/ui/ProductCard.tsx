@@ -1,6 +1,5 @@
 import { type ReactNode } from "react";
 import { type Product } from "../type/Product";
-import PurchaseButton from "./PurchaseButton";
 
 const ProductCard = ({ product, children }: { product: Product, children: ReactNode }) => {
     return (

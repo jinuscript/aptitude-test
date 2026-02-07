@@ -9,7 +9,7 @@ import { writeJsonDb } from '@/app/api/database/shared/utils/writeJsonDb';
 export async function POST(request: Request) {
 
     const body = await request.json();
-    // const { code } = body;
+    const { code, totalSection } = body;
 
     try {
         // 액세스 토큰 추출& 검증
@@ -22,9 +22,9 @@ export async function POST(request: Request) {
         const newTestSummary = {
             testId: crypto.randomUUID(),
             userId: payload.user_id,
-            code: "MID",
+            code: code,
             currentSection: null,
-            totalSection: 5,
+            totalSection: totalSection,
             purchaseDate: new Date().toISOString(),
             status: "NOT_STARTED"
         }
