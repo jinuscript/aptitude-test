@@ -38,6 +38,7 @@ export const config = {
     matcher: [
         '/dashboard/:path*',
         '/test/:path*',
-        '/result/:path*'
+        '/result/:path*',
+        '/purchase/:path*'
     ],
 };
