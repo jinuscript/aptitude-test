@@ -1,12 +1,13 @@
+import { type ReactNode } from "react";
 import { type Product } from "../type/Product";
 import PurchaseButton from "./PurchaseButton";
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({ product, children }: { product: Product, children: ReactNode }) => {
     return (
         <div>
             <h1>{product.name}</h1>
-            <p>{product.price}</p>
-            <PurchaseButton />
+            <p>{product.price.toLocaleString()}원</p>
+            {children}
         </div>
     );
 };
