@@ -17,12 +17,15 @@ export async function GET(request: Request, { params }: { params: Promise<{ curr
         await verifyAccessToken(accessToken);
 
         // DB에서 질문 추출 및 알고리즘 점수 제외
-        const rawQuestions = await readJsonDb(`app/api/database/data/questions/${current}.json`);
-        const questions = rawQuestions.map(({ weights, ...rest }) => rest);
+        const { questions: rawQuestions, options } = await readJsonDb(`app/api/database/data/questions/${current.toLowerCase()}.json`);
+        const questions = rawQuestions.map(({ weights, ...rest }: any) => rest);
 
         return NextResponse.json({
             success: true,
-            data: questions,
+            data: {
+                questions,
+                options
+            },
             error: null
         }, { status: 200 });
     } catch (error) {
@@ -36,7 +39,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ curr
 }
 
 // 정답 제출
-export async function POST(request: Request, { params }: { params: Promise<{ id: string, current: string }> }) {
+export async function PATCH(request: Request, { params }: { params: Promise<{ id: string, current: string }> }) {
     const { id, current } = await params;
 
     const userAnswers = await request.json();
@@ -46,37 +49,17 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
         const accessToken = getAccessToken(request);
 
         // 액세스 토큰 검증
-        const { user_id: userId } = await verifyAccessToken(accessToken);
+        await verifyAccessToken(accessToken);
 
         // 사용자 답변 저장
-        const allTests = await readJsonDb('app/api/database/data/test-detail.json');
+        const allTests = await readJsonDb('app/api/database/data/test-answers.json');
         allTests[id].answers[current] = userAnswers;
-        await writeJsonDb('app/api/database/data/test-detail.json', allTests);
-
-        // 다음 파트 이동
-        const sectionOrder = ["strength", "interest", "characteristic", "value", "knowledge"];
-
-        const testSummary = await readJsonDb('app/api/database/data/test-summary.json');
-
-        const currentIndex = sectionOrder.indexOf(current);
-        const nextSection = sectionOrder[currentIndex + 1] || null;
-
-        if (!nextSection) {
-            testSummary[userId].find((t: { testId: string }) => t.testId === id).currentSection = null;
-            testSummary[userId].find((t: { testId: string }) => t.testId === id).status = "COMPLETED";
-        } else {
-            testSummary[userId].find((t: { testId: string }) => t.testId === id).currentSection = nextSection;
-            testSummary[userId].find((t: { testId: string }) => t.testId === id).status = "IN_PROGRESS";
-        }
-
-        await writeJsonDb('app/api/database/data/test-summary.json', testSummary);
+        await writeJsonDb('app/api/database/data/test-answers.json', allTests);
 
         return NextResponse.json({
             success: true,
             data: {
-                testId: id,
-                currentSection: current,
-                nextSection,
+                answers: allTests[id].answers[current]
             },
             error: null
         }, { status: 200 });
