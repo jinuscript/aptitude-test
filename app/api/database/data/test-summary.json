@@ -5,7 +5,7 @@
       "userId": "user",
       "code": "ELM",
       "name": "초등학생 테스트",
-      "currentSection": "STRENGTH",
+      "currentSection": null,
       "sectionList": [
         "STRENGTH",
         "INTEREST",
@@ -14,7 +14,7 @@
         "KNOWLEDGE"
       ],
       "purchaseDate": "2026-01-27T12:16:57+09:00",
-      "status": "NOT_STARTED"
+      "status": "COMPLETED"
     }
   ]
 }
