@@ -1,0 +1,54 @@
+{
+  "c60f45ad-4475-4edc-aa8c-c145c66e3723": {
+    "userId": "770ce4c4-f51d-4430-8f5b-ae21bb32c43d",
+    "testId": "c60f45ad-4475-4edc-aa8c-c145c66e3723",
+    "answers": {
+      "STRENGTH": [
+        {
+          "id": "S1",
+          "value": 2
+        },
+        {
+          "id": "S2",
+          "value": 3
+        },
+        {
+          "id": "S3",
+          "value": 2
+        },
+        {
+          "id": "S4",
+          "value": 3
+        },
+        {
+          "id": "S5",
+          "value": 2
+        },
+        {
+          "id": "S6",
+          "value": 3
+        },
+        {
+          "id": "S7",
+          "value": 3
+        },
+        {
+          "id": "S8",
+          "value": 3
+        },
+        {
+          "id": "S9",
+          "value": 2
+        },
+        {
+          "id": "S10",
+          "value": 2
+        }
+      ],
+      "INTEREST": [],
+      "PERSONALITY": [],
+      "VALUE": [],
+      "KNOWLEDGE": []
+    }
+  }
+}
