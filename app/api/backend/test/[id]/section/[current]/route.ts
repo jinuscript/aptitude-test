@@ -7,8 +7,8 @@ import { readJsonDb } from '@/app/api/database/shared/utils/readJsonDb';
 import { writeJsonDb } from '@/app/api/database/shared/utils/writeJsonDb';
 
 // 질문 호출
-export async function GET(request: Request, { params }: { params: Promise<{ id: string, current: string }> }) {
-    const { id, current } = await params;
+export async function GET(request: Request, { params }: { params: Promise<{ current: string }> }) {
+    const { current } = await params;
     try {
         // 액세스 토큰 추출& 검증
         const accessToken = getAccessToken(request);
@@ -16,17 +16,13 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
         // 액세스 토큰 검증
         await verifyAccessToken(accessToken);
 
-        // DB에서 질문 추출
-        const allTests = await readJsonDb('app/api/database/data/test-detail.json');
-        const test = allTests[id];
-
-        const { questions } = test;
-
-        const currentQuestions = questions[current];
+        // DB에서 질문 추출 및 알고리즘 점수 제외
+        const rawQuestions = await readJsonDb(`app/api/database/data/questions/${current}.json`);
+        const questions = rawQuestions.map(({ weights, ...rest }) => rest);
 
         return NextResponse.json({
             success: true,
-            data: currentQuestions,
+            data: questions,
             error: null
         }, { status: 200 });
     } catch (error) {
