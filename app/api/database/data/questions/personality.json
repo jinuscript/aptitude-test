@@ -1,0 +1,95 @@
+[
+    {
+        "id": "P1",
+        "category": "특성",
+        "question": "여럿이 협동하는 환경보다 혼자 집중해서 일하는 환경을 선호하나요?",
+        "weights": {
+            "science": 1,
+            "arts": 1
+        }
+    },
+    {
+        "id": "P2",
+        "category": "특성",
+        "question": "체계적이고 규정된 절차를 따르는 게 편한가요?",
+        "weights": {
+            "medical": 1,
+            "engineering": 1,
+            "business": 1
+        }
+    },
+    {
+        "id": "P3",
+        "category": "특성",
+        "question": "남들이 가지 않는 새로운 길을 개척하는 도전적인 성격인가요?",
+        "weights": {
+            "business": 2,
+            "engineering": 1
+        }
+    },
+    {
+        "id": "P4",
+        "category": "특성",
+        "question": "세부적인 디테일을 챙기기보다 전체적인 숲을 보는 편인가요?",
+        "weights": {
+            "business": 1,
+            "humanities": 1
+        }
+    },
+    {
+        "id": "P5",
+        "category": "특성",
+        "question": "반복적인 업무에도 쉽게 지치지 않고 꾸준함을 유지할 수 있나요?",
+        "weights": {
+            "science": 2,
+            "medical": 2
+        }
+    },
+    {
+        "id": "P6",
+        "category": "특성",
+        "question": "대중 앞에 서서 주목받는 역할을 즐기는 편인가요?",
+        "weights": {
+            "arts": 2,
+            "education": 1,
+            "business": 1
+        }
+    },
+    {
+        "id": "P7",
+        "category": "특성",
+        "question": "감정적인 공감보다는 객관적인 사실을 근거로 판단하나요?",
+        "weights": {
+            "science": 2,
+            "engineering": 2,
+            "medical": 1
+        }
+    },
+    {
+        "id": "P8",
+        "category": "특성",
+        "question": "리더로서 팀을 이끄는 것보다 조력자로서 지원하는 게 마음 편한가요?",
+        "weights": {
+            "medical": 1,
+            "education": 1
+        }
+    },
+    {
+        "id": "P9",
+        "category": "특성",
+        "question": "결과만큼이나 과정을 중요하게 생각하며 원칙을 지키나요?",
+        "weights": {
+            "humanities": 1,
+            "science": 1
+        }
+    },
+    {
+        "id": "P10",
+        "category": "특성",
+        "question": "스트레스가 많은 긴박한 상황에서도 평정심을 잘 유지하나요?",
+        "weights": {
+            "medical": 2,
+            "engineering": 1
+        }
+    }
+]

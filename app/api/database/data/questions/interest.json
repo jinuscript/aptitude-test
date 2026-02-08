@@ -1,0 +1,90 @@
+[
+    {
+        "id": "I1",
+        "category": "흥미",
+        "question": "새로운 IT 기기나 소프트웨어가 출시되면 직접 써봐야 직성이 풀리나요?",
+        "weights": {
+            "engineering": 2
+        }
+    },
+    {
+        "id": "I2",
+        "category": "흥미",
+        "question": "사회 현상이나 시사 이슈에 대해 토론하는 것을 즐기나요?",
+        "weights": {
+            "humanities": 2,
+            "business": 1
+        }
+    },
+    {
+        "id": "I3",
+        "category": "흥미",
+        "question": "직접 손으로 무언가를 만들거나 조립하는 활동에 몰입하나요?",
+        "weights": {
+            "engineering": 2,
+            "arts": 2
+        }
+    },
+    {
+        "id": "I4",
+        "category": "흥미",
+        "question": "식물이나 동물, 혹은 자연환경을 관찰하고 가꾸는 것에 관심이 많나요?",
+        "weights": {
+            "science": 2,
+            "medical": 1
+        }
+    },
+    {
+        "id": "I5",
+        "category": "흥미",
+        "question": "소설, 영화, 연극 등 이야기를 다룬 콘텐츠를 분석하는 것을 좋아하나요?",
+        "weights": {
+            "humanities": 2,
+            "arts": 1
+        }
+    },
+    {
+        "id": "I6",
+        "category": "흥미",
+        "question": "사람들의 심리나 행동 원리에 대해 궁금해본 적이 많나요?",
+        "weights": {
+            "humanities": 2,
+            "medical": 1,
+            "education": 1
+        }
+    },
+    {
+        "id": "I7",
+        "category": "흥미",
+        "question": "경제 흐름, 주식, 창업 등 '돈의 흐름'에 관련된 소식을 찾아보나요?",
+        "weights": {
+            "business": 2
+        }
+    },
+    {
+        "id": "I8",
+        "category": "흥미",
+        "question": "음악, 미술, 디자인 등 예술적 감성을 표현하는 활동에 끌리나요?",
+        "weights": {
+            "arts": 2
+        }
+    },
+    {
+        "id": "I9",
+        "category": "흥미",
+        "question": "실험하고 가설을 검증하며 진리를 탐구하는 과정이 흥미로운가요?",
+        "weights": {
+            "science": 2,
+            "engineering": 1
+        }
+    },
+    {
+        "id": "I10",
+        "category": "흥미",
+        "question": "다른 사람을 가르치거나 성장을 돕는 활동에서 보람을 느끼나요?",
+        "weights": {
+            "education": 2,
+            "medical": 1
+        }
+    }
+]
