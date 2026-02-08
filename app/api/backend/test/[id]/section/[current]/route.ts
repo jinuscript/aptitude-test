@@ -38,7 +38,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ curr
     }
 }
 
-// 정답 제출
+// 정답 저장
 export async function PATCH(request: Request, { params }: { params: Promise<{ id: string, current: string }> }) {
     const { id, current } = await params;
 
@@ -63,6 +63,50 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
             },
             error: null
         }, { status: 200 });
+    } catch (error) {
+        if (error instanceof Error) {
+            if (error.message === "INVALID_TOKEN") {
+                return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.INVALID_TOKEN.code, message: ERROR_MESSAGES.INVALID_TOKEN.message, details: [] } }, { status: 401 });
+            }
+        }
+        return NextResponse.json({ success: false, data: null, error: { code: ERROR_MESSAGES.SERVER_ERROR.code, message: ERROR_MESSAGES.SERVER_ERROR.message, details: [] } }, { status: 500 });
+    }
+}
+
+//페이지 이동
+export async function POST(request: Request, { params }: { params: Promise<{ id: string, current: string }> }) {
+    const { id, current } = await params;
+
+    try {
+        // 액세스 토큰 추출& 검증
+        const accessToken = getAccessToken(request);
+
+        // 액세스 토큰 검증
+        const { user_id: userId } = await verifyAccessToken(accessToken);
+
+        // 2. Navigation Logic (The Navigator)
+        const summary = await readJsonDb('app/api/database/data/test-summary.json');
+        const userTest = summary[userId].find((t: any) => t.testId === id);
+
+        const currentIndex = userTest.sectionList.indexOf(current);
+        const nextSection = userTest.sectionList[currentIndex + 1] || null;
+
+        // 3. Update State
+        userTest.currentSection = nextSection;
+        if (nextSection) {
+            userTest.status = "IN_PROGRESS";
+        } else {
+            userTest.status = "COMPLETED";
+        }
+
+        // 4. Save Everything
+        await writeJsonDb('app/api/database/data/test-summary.json', summary);
+
+        return NextResponse.json({
+            success: true,
+            data: { nextSection }
+        });
+
     } catch (error) {
         if (error instanceof Error) {
             if (error.message === "INVALID_TOKEN") {
