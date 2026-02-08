@@ -1,27 +1,17 @@
 import { testAction } from "../action/testAction";
 
-interface Question {
-    id: string;
-    section: "strength" | "interest" | "characteristic" | "value" | "knowledge";
-    question: "string";
-    options: {
-        value: number;
-        label: string;
-    }[];
-}
-
-const TestForm = ({ questions, testId, code, currentSection }: { questions: Question[], testId: string, code: string, currentSection: string }) => {
+const TestForm = ({ questions, options, testId, code, currentSection }: { questions: any, options: any, testId: string, code: string, currentSection: string }) => {
 
     return (
         <form action={testAction}>
             <input type="hidden" name="testId" value={testId} />
             <input type="hidden" name="code" value={code} />
             <input type="hidden" name="currentSection" value={currentSection} />
-            {questions.map((q) => (
+            {questions?.map((q: any) => (
                 <div key={q.id}>
                     <p>{q.question}</p>
                     <div>
-                        {q.options.map((option) => (
+                        {options?.map((option: any) => (
                             <label key={`${q.id}-${option.value}`}>
                                 <input
                                     type="radio"
@@ -35,7 +25,7 @@ const TestForm = ({ questions, testId, code, currentSection }: { questions: Ques
                     </div>
                 </div>
             ))}
-            <button type="submit">제출하기</button>
+            <button type="submit">답안 제출</button>
         </form>
     );
 };
