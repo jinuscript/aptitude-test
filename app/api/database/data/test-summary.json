@@ -4,10 +4,17 @@
       "testId": "c60f45ad-4475-4edc-aa8c-c145c66e3723",
       "userId": "user",
       "code": "ELM",
-      "currentSection": null,
-      "totalSection": 5,
+      "name": "초등학생 테스트",
+      "currentSection": "STRENGTH",
+      "sectionList": [
+        "STRENGTH",
+        "INTEREST",
+        "CHARACTER",
+        "VALUE",
+        "KNOWLEDGE"
+      ],
       "purchaseDate": "2026-01-27T12:16:57+09:00",
-      "status": "COMPLETED"
+      "status": "NOT_STARTED"
     }
   ]
 }
