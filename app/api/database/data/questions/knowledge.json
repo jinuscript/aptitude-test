@@ -7,6 +7,11 @@
             "weights": {
                 "medical": 2,
                 "science": 1
+            },
+            "sub_weights": {
+                "medicine": 3,
+                "biology": 3,
+                "pharmacy": 2
             }
         },
         {
@@ -16,6 +21,10 @@
             "weights": {
                 "humanities": 2,
                 "arts": 1
+            },
+            "sub_weights": {
+                "history": 3,
+                "art_history": 2
             }
         },
         {
@@ -24,6 +33,10 @@
             "question": "프로그래밍 언어나 알고리즘의 기본 개념을 이해하고 있나요?",
             "weights": {
                 "engineering": 2
+            },
+            "sub_weights": {
+                "computer_science": 3,
+                "software_eng": 3
             }
         },
         {
@@ -33,6 +46,11 @@
             "weights": {
                 "humanities": 2,
                 "business": 1
+            },
+            "sub_weights": {
+                "law": 3,
+                "political_science": 3,
+                "public_admin": 2
             }
         },
         {
@@ -42,6 +60,11 @@
             "weights": {
                 "science": 2,
                 "engineering": 1
+            },
+            "sub_weights": {
+                "physics": 3,
+                "chemistry": 3,
+                "chemical_eng": 2
             }
         },
         {
@@ -51,6 +74,11 @@
             "weights": {
                 "humanities": 2,
                 "education": 1
+            },
+            "sub_weights": {
+                "philosophy": 3,
+                "literature": 3,
+                "ethics_edu": 2
             }
         },
         {
@@ -60,6 +88,11 @@
             "weights": {
                 "business": 2,
                 "humanities": 1
+            },
+            "sub_weights": {
+                "marketing": 3,
+                "business_admin": 3,
+                "journalism": 2
             }
         },
         {
@@ -69,6 +102,11 @@
             "weights": {
                 "engineering": 2,
                 "arts": 1
+            },
+            "sub_weights": {
+                "architecture": 3,
+                "civil_eng": 3,
+                "urban_planning": 2
             }
         },
         {
@@ -79,6 +117,11 @@
                 "science": 2,
                 "engineering": 2,
                 "business": 1
+            },
+            "sub_weights": {
+                "mathematics": 3,
+                "physics": 2,
+                "statistics": 3
             }
         },
         {
@@ -88,6 +131,11 @@
             "weights": {
                 "humanities": 2,
                 "business": 1
+            },
+            "sub_weights": {
+                "intl_relations": 3,
+                "geography": 2,
+                "trade": 2
             }
         }
     ],

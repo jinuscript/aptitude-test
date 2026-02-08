@@ -7,6 +7,11 @@
             "weights": {
                 "science": 1,
                 "arts": 1
+            },
+            "sub_weights": {
+                "pure_science": 3,
+                "fine_arts": 3,
+                "software_dev": 2
             }
         },
         {
@@ -17,6 +22,11 @@
                 "medical": 1,
                 "engineering": 1,
                 "business": 1
+            },
+            "sub_weights": {
+                "nursing": 3,
+                "civil_eng": 2,
+                "accounting": 3
             }
         },
         {
@@ -26,6 +36,11 @@
             "weights": {
                 "business": 2,
                 "engineering": 1
+            },
+            "sub_weights": {
+                "entrepreneurship": 3,
+                "frontier_tech": 2,
+                "marketing": 2
             }
         },
         {
@@ -35,6 +50,11 @@
             "weights": {
                 "business": 1,
                 "humanities": 1
+            },
+            "sub_weights": {
+                "management": 3,
+                "sociology": 2,
+                "strategic_planning": 2
             }
         },
         {
@@ -44,6 +64,11 @@
             "weights": {
                 "science": 2,
                 "medical": 2
+            },
+            "sub_weights": {
+                "laboratory_work": 3,
+                "nursing": 3,
+                "pharmacy": 2
             }
         },
         {
@@ -54,6 +79,11 @@
                 "arts": 2,
                 "education": 1,
                 "business": 1
+            },
+            "sub_weights": {
+                "performing_arts": 3,
+                "secondary_edu": 2,
+                "journalism": 2
             }
         },
         {
@@ -64,6 +94,11 @@
                 "science": 2,
                 "engineering": 2,
                 "medical": 1
+            },
+            "sub_weights": {
+                "physics": 3,
+                "data_science": 3,
+                "forensic_science": 3
             }
         },
         {
@@ -73,6 +108,11 @@
             "weights": {
                 "medical": 1,
                 "education": 1
+            },
+            "sub_weights": {
+                "nursing": 3,
+                "social_welfare": 2,
+                "educational_support": 2
             }
         },
         {
@@ -82,6 +122,11 @@
             "weights": {
                 "humanities": 1,
                 "science": 1
+            },
+            "sub_weights": {
+                "law": 3,
+                "ethics": 3,
+                "quality_control": 2
             }
         },
         {
@@ -91,6 +136,11 @@
             "weights": {
                 "medical": 2,
                 "engineering": 1
+            },
+            "sub_weights": {
+                "emergency_med": 3,
+                "surgery": 3,
+                "cyber_security": 2
             }
         }
     ],
