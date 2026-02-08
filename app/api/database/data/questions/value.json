@@ -10,9 +10,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "social_welfare": 3,
-                "special_edu": 3,
-                "public_health": 2
+                "social_welfare_policy": 3,
+                "special_needs_edu": 3,
+                "public_health_admin": 2
             }
         },
         {
@@ -25,9 +25,9 @@
                 "medical": 1
             },
             "sub_weights": {
-                "finance": 3,
-                "semiconductor_eng": 2,
-                "medicine": 2
+                "econ_finance": 3,
+                "robot_mobility": 2,
+                "clinical_medicine": 2
             }
         },
         {
@@ -39,9 +39,9 @@
                 "engineering": 2
             },
             "sub_weights": {
-                "fine_arts": 3,
-                "software_eng": 3,
-                "industrial_design": 3
+                "visual_fine_arts": 3,
+                "sw_security": 3,
+                "design_industrial": 3
             }
         },
         {
@@ -54,9 +54,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "medicine": 2,
-                "primary_edu": 3,
-                "public_admin": 3
+                "clinical_medicine": 2,
+                "primary_child_edu": 3,
+                "law_politics": 3
             }
         },
         {
@@ -68,9 +68,9 @@
                 "education": 1
             },
             "sub_weights": {
-                "library_science": 3,
-                "counseling": 2,
-                "general_admin": 2
+                "hist_philosophy": 3,
+                "psych_counseling": 2,
+                "primary_child_edu": 2
             }
         },
         {
@@ -83,9 +83,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "medicine": 2,
-                "pure_science": 3,
-                "law": 2
+                "clinical_medicine": 2,
+                "pure_math_physics": 3,
+                "law_politics": 2
             }
         },
         {
@@ -97,9 +97,9 @@
                 "engineering": 2
             },
             "sub_weights": {
-                "env_science": 3,
-                "energy_eng": 3,
-                "marine_science": 2
+                "earth_ocean_env": 3,
+                "energy_chem": 3,
+                "bio_life_science": 2
             }
         },
         {
@@ -111,9 +111,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "intl_trade": 3,
-                "intl_relations": 3,
-                "tourism": 2
+                "startup_trade": 3,
+                "law_politics": 2,
+                "mkt_media": 2
             }
         },
         {
@@ -125,9 +125,9 @@
                 "humanities": 2
             },
             "sub_weights": {
-                "philosophy": 2,
-                "pure_mathematics": 3,
-                "theory_phys": 3
+                "hist_philosophy": 2,
+                "pure_math_physics": 3,
+                "bio_life_science": 2
             }
         },
         {
@@ -139,9 +139,9 @@
                 "education": 1
             },
             "sub_weights": {
-                "entertainment": 3,
-                "arts_edu": 2,
-                "content_design": 2
+                "ent_planning": 3,
+                "subject_special_edu": 2,
+                "media_content": 3
             }
         }
     ],

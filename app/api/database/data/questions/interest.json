@@ -8,8 +8,8 @@
                 "engineering": 2
             },
             "sub_weights": {
-                "computer_science": 3,
-                "electronic_eng": 2
+                "sw_security": 3,
+                "robot_mobility": 2
             }
         },
         {
@@ -21,9 +21,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "political_science": 3,
-                "sociology": 2,
-                "law": 2
+                "law_politics": 3,
+                "media_sociology": 2,
+                "biz_mgmt_strategy": 1
             }
         },
         {
@@ -35,9 +35,9 @@
                 "arts": 2
             },
             "sub_weights": {
-                "mechanical_eng": 3,
-                "architecture": 2,
-                "industrial_design": 2
+                "robot_mobility": 3,
+                "space_archi": 2,
+                "design_industrial": 2
             }
         },
         {
@@ -49,9 +49,9 @@
                 "medical": 1
             },
             "sub_weights": {
-                "biology": 3,
-                "veterinary_medicine": 2,
-                "environmental_science": 2
+                "bio_life_science": 3,
+                "vet_science": 2,
+                "earth_ocean_env": 2
             }
         },
         {
@@ -63,9 +63,9 @@
                 "arts": 1
             },
             "sub_weights": {
-                "literature": 3,
-                "film_and_media": 3,
-                "philosophy": 1
+                "lang_literature": 3,
+                "media_content": 3,
+                "hist_philosophy": 1
             }
         },
         {
@@ -78,9 +78,9 @@
                 "education": 1
             },
             "sub_weights": {
-                "psychology": 3,
-                "nursing": 1,
-                "counseling_edu": 2
+                "psych_counseling": 3,
+                "nursing_care": 1,
+                "counseling_psych_edu": 2
             }
         },
         {
@@ -91,9 +91,9 @@
                 "business": 2
             },
             "sub_weights": {
-                "economics": 3,
-                "business_admin": 3,
-                "finance": 3
+                "econ_finance": 3,
+                "biz_mgmt_strategy": 2,
+                "startup_trade": 3
             }
         },
         {
@@ -104,9 +104,9 @@
                 "arts": 2
             },
             "sub_weights": {
-                "fine_arts": 3,
-                "music": 3,
-                "design": 3
+                "visual_fine_arts": 3,
+                "performing_music": 3,
+                "design_industrial": 3
             }
         },
         {
@@ -118,9 +118,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "physics": 2,
-                "chemistry": 2,
-                "chemical_eng": 2
+                "pure_math_physics": 2,
+                "chem_materials": 3,
+                "energy_chem": 2
             }
         },
         {
@@ -132,9 +132,9 @@
                 "medical": 1
             },
             "sub_weights": {
-                "primary_edu": 3,
-                "secondary_edu": 3,
-                "social_welfare": 2
+                "primary_child_edu": 3,
+                "subject_special_edu": 3,
+                "social_welfare_policy": 2
             }
         }
     ],

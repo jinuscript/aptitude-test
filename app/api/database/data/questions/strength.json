@@ -10,10 +10,10 @@
                 "business": 1
             },
             "sub_weights": {
-                "data_science": 3,
-                "statistics": 3,
-                "mathematics": 3,
-                "finance": 2
+                "ai_data": 3,
+                "pure_math_physics": 3,
+                "data_accounting": 3,
+                "econ_finance": 2
             }
         },
         {
@@ -26,10 +26,10 @@
                 "business": 1
             },
             "sub_weights": {
-                "law": 3,
-                "journalism": 3,
-                "primary_edu": 2,
-                "marketing": 2
+                "law_politics": 3,
+                "media_sociology": 3,
+                "primary_child_edu": 2,
+                "mkt_media": 2
             }
         },
         {
@@ -41,9 +41,9 @@
                 "arts": 1
             },
             "sub_weights": {
-                "mechanical_eng": 3,
-                "electronic_eng": 3,
-                "industrial_design": 2
+                "robot_mobility": 3,
+                "energy_chem": 2,
+                "design_industrial": 2
             }
         },
         {
@@ -55,9 +55,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "linguistics": 3,
-                "intl_relations": 3,
-                "trade": 2
+                "lang_literature": 3,
+                "startup_trade": 3,
+                "law_politics": 1
             }
         },
         {
@@ -70,9 +70,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "social_welfare": 3,
-                "psychology": 2,
-                "business_admin": 2
+                "social_welfare_policy": 3,
+                "psych_counseling": 2,
+                "biz_mgmt_strategy": 2
             }
         },
         {
@@ -84,9 +84,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "business_admin": 3,
-                "industrial_eng": 3,
-                "accounting": 2
+                "biz_mgmt_strategy": 3,
+                "ai_data": 2,
+                "data_accounting": 2
             }
         },
         {
@@ -98,9 +98,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "design": 3,
-                "architecture": 3,
-                "content_creation": 2
+                "design_industrial": 3,
+                "space_archi": 3,
+                "media_content": 2
             }
         },
         {
@@ -113,9 +113,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "nursing": 3,
-                "psychology": 3,
-                "counseling_edu": 3
+                "nursing_care": 3,
+                "psych_counseling": 3,
+                "counseling_psych_edu": 3
             }
         },
         {
@@ -128,10 +128,10 @@
                 "science": 1
             },
             "sub_weights": {
-                "history": 3,
-                "law": 3,
-                "economics": 2,
-                "biology": 1
+                "hist_philosophy": 3,
+                "law_politics": 3,
+                "econ_finance": 2,
+                "bio_life_science": 1
             }
         },
         {
@@ -144,9 +144,9 @@
                 "medical": 1
             },
             "sub_weights": {
-                "computer_science": 2,
-                "emergency_med": 3,
-                "management": 2
+                "sw_security": 2,
+                "clinical_medicine": 3,
+                "biz_mgmt_strategy": 2
             }
         }
     ],

@@ -9,9 +9,9 @@
                 "arts": 1
             },
             "sub_weights": {
-                "pure_science": 3,
-                "fine_arts": 3,
-                "software_dev": 2
+                "pure_math_physics": 3,
+                "visual_fine_arts": 3,
+                "sw_security": 2
             }
         },
         {
@@ -24,9 +24,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "nursing": 3,
-                "civil_eng": 2,
-                "accounting": 3
+                "nursing_care": 3,
+                "energy_chem": 2,
+                "data_accounting": 3
             }
         },
         {
@@ -38,9 +38,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "entrepreneurship": 3,
-                "frontier_tech": 2,
-                "marketing": 2
+                "startup_trade": 3,
+                "ai_data": 2,
+                "mkt_media": 2
             }
         },
         {
@@ -52,9 +52,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "management": 3,
-                "sociology": 2,
-                "strategic_planning": 2
+                "biz_mgmt_strategy": 3,
+                "media_sociology": 2,
+                "law_politics": 2
             }
         },
         {
@@ -66,9 +66,9 @@
                 "medical": 2
             },
             "sub_weights": {
-                "laboratory_work": 3,
-                "nursing": 3,
-                "pharmacy": 2
+                "pharm_bio": 3,
+                "nursing_care": 3,
+                "chem_materials": 2
             }
         },
         {
@@ -81,9 +81,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "performing_arts": 3,
-                "secondary_edu": 2,
-                "journalism": 2
+                "performing_music": 3,
+                "subject_special_edu": 2,
+                "mkt_media": 2
             }
         },
         {
@@ -96,9 +96,9 @@
                 "medical": 1
             },
             "sub_weights": {
-                "physics": 3,
-                "data_science": 3,
-                "forensic_science": 3
+                "pure_math_physics": 3,
+                "ai_data": 3,
+                "forensic_applied": 3
             }
         },
         {
@@ -110,9 +110,9 @@
                 "education": 1
             },
             "sub_weights": {
-                "nursing": 3,
-                "social_welfare": 2,
-                "educational_support": 2
+                "nursing_care": 3,
+                "social_welfare_policy": 2,
+                "primary_child_edu": 2
             }
         },
         {
@@ -124,9 +124,9 @@
                 "science": 1
             },
             "sub_weights": {
-                "law": 3,
-                "ethics": 3,
-                "quality_control": 2
+                "law_politics": 3,
+                "hist_philosophy": 3,
+                "energy_chem": 2
             }
         },
         {
@@ -138,9 +138,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "emergency_med": 3,
-                "surgery": 3,
-                "cyber_security": 2
+                "clinical_medicine": 3,
+                "robot_mobility": 2,
+                "sw_security": 2
             }
         }
     ],

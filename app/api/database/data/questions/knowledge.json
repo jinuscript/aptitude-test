@@ -9,9 +9,9 @@
                 "science": 1
             },
             "sub_weights": {
-                "medicine": 3,
-                "biology": 3,
-                "pharmacy": 2
+                "clinical_medicine": 3,
+                "bio_life_science": 3,
+                "pharm_bio": 2
             }
         },
         {
@@ -23,8 +23,8 @@
                 "arts": 1
             },
             "sub_weights": {
-                "history": 3,
-                "art_history": 2
+                "hist_philosophy": 3,
+                "visual_fine_arts": 2
             }
         },
         {
@@ -35,8 +35,8 @@
                 "engineering": 2
             },
             "sub_weights": {
-                "computer_science": 3,
-                "software_eng": 3
+                "sw_security": 3,
+                "ai_data": 2
             }
         },
         {
@@ -48,9 +48,8 @@
                 "business": 1
             },
             "sub_weights": {
-                "law": 3,
-                "political_science": 3,
-                "public_admin": 2
+                "law_politics": 3,
+                "biz_mgmt_strategy": 1
             }
         },
         {
@@ -62,9 +61,9 @@
                 "engineering": 1
             },
             "sub_weights": {
-                "physics": 3,
-                "chemistry": 3,
-                "chemical_eng": 2
+                "pure_math_physics": 3,
+                "chem_materials": 3,
+                "energy_chem": 2
             }
         },
         {
@@ -76,9 +75,9 @@
                 "education": 1
             },
             "sub_weights": {
-                "philosophy": 3,
-                "literature": 3,
-                "ethics_edu": 2
+                "hist_philosophy": 3,
+                "lang_literature": 2,
+                "subject_special_edu": 1
             }
         },
         {
@@ -90,9 +89,9 @@
                 "humanities": 1
             },
             "sub_weights": {
-                "marketing": 3,
-                "business_admin": 3,
-                "journalism": 2
+                "mkt_media": 3,
+                "biz_mgmt_strategy": 3,
+                "media_sociology": 2
             }
         },
         {
@@ -104,9 +103,8 @@
                 "arts": 1
             },
             "sub_weights": {
-                "architecture": 3,
-                "civil_eng": 3,
-                "urban_planning": 2
+                "space_archi": 3,
+                "design_industrial": 2
             }
         },
         {
@@ -119,9 +117,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "mathematics": 3,
-                "physics": 2,
-                "statistics": 3
+                "pure_math_physics": 3,
+                "ai_data": 2,
+                "data_accounting": 3
             }
         },
         {
@@ -133,9 +131,9 @@
                 "business": 1
             },
             "sub_weights": {
-                "intl_relations": 3,
-                "geography": 2,
-                "trade": 2
+                "law_politics": 3,
+                "startup_trade": 2,
+                "earth_ocean_env": 1
             }
         }
     ],
