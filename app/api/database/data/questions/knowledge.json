@@ -1,0 +1,162 @@
+{
+    "questions": [
+        {
+            "id": "K1",
+            "category": "지식",
+            "question": "인체의 구조나 질병의 원인 등 생명 과학에 관한 기초 지식이 있나요?",
+            "weights": {
+                "medical": 2,
+                "science": 1
+            },
+            "sub_weights": {
+                "clinical_medicine": 3,
+                "bio_life_science": 3,
+                "pharm_bio": 2
+            }
+        },
+        {
+            "id": "K2",
+            "category": "지식",
+            "question": "역사적 사건들의 인과관계나 시대적 배경을 잘 기억하고 있나요?",
+            "weights": {
+                "humanities": 2,
+                "arts": 1
+            },
+            "sub_weights": {
+                "hist_philosophy": 3,
+                "visual_fine_arts": 2
+            }
+        },
+        {
+            "id": "K3",
+            "category": "지식",
+            "question": "프로그래밍 언어나 알고리즘의 기본 개념을 이해하고 있나요?",
+            "weights": {
+                "engineering": 2
+            },
+            "sub_weights": {
+                "sw_security": 3,
+                "ai_data": 2
+            }
+        },
+        {
+            "id": "K4",
+            "category": "지식",
+            "question": "법적 권리와 의무, 혹은 국가 시스템의 작동 방식에 대해 알고 있나요?",
+            "weights": {
+                "humanities": 2,
+                "business": 1
+            },
+            "sub_weights": {
+                "law_politics": 3,
+                "biz_mgmt_strategy": 1
+            }
+        },
+        {
+            "id": "K5",
+            "category": "지식",
+            "question": "물리 법칙이나 화학 반응식 등 자연과학적 원리에 익숙한가요?",
+            "weights": {
+                "science": 2,
+                "engineering": 1
+            },
+            "sub_weights": {
+                "pure_math_physics": 3,
+                "chem_materials": 3,
+                "energy_chem": 2
+            }
+        },
+        {
+            "id": "K6",
+            "category": "지식",
+            "question": "고전 문학이나 철학자들의 사상에 대해 접해본 적이 있나요?",
+            "weights": {
+                "humanities": 2,
+                "education": 1
+            },
+            "sub_weights": {
+                "hist_philosophy": 3,
+                "lang_literature": 2,
+                "subject_special_edu": 1
+            }
+        },
+        {
+            "id": "K7",
+            "category": "지식",
+            "question": "마케팅 기법이나 기업 경영의 성공 사례에 대해 알고 있는 것이 있나요?",
+            "weights": {
+                "business": 2,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "mkt_media": 3,
+                "biz_mgmt_strategy": 3,
+                "media_sociology": 2
+            }
+        },
+        {
+            "id": "K8",
+            "category": "지식",
+            "question": "건축물의 구조나 도시 설계의 원리에 대해 관심을 가져본 적 있나요?",
+            "weights": {
+                "engineering": 2,
+                "arts": 1
+            },
+            "sub_weights": {
+                "space_archi": 3,
+                "design_industrial": 2
+            }
+        },
+        {
+            "id": "K9",
+            "category": "지식",
+            "question": "미분, 적분, 통계 등 심화 수학 개념을 활용할 수 있나요?",
+            "weights": {
+                "science": 2,
+                "engineering": 2,
+                "business": 1
+            },
+            "sub_weights": {
+                "pure_math_physics": 3,
+                "ai_data": 2,
+                "data_accounting": 3
+            }
+        },
+        {
+            "id": "K10",
+            "category": "지식",
+            "question": "글로벌 이슈(전쟁, 환경협약 등)나 국제 관계에 대해 파악하고 있나요?",
+            "weights": {
+                "humanities": 2,
+                "business": 1
+            },
+            "sub_weights": {
+                "law_politics": 3,
+                "startup_trade": 2,
+                "earth_ocean_env": 1
+            }
+        }
+    ],
+    "options": [
+        {
+            "value": 1,
+            "label": "전혀 그렇지 않다"
+        },
+        {
+            "value": 2,
+            "label": "그렇지 않다"
+        },
+        {
+            "value": 3,
+            "label": "보통이다"
+        },
+        {
+            "value": 4,
+            "label": "그렇다"
+        },
+        {
+            "value": 5,
+            "label": "매우 그렇다"
+        }
+    ]
+}
