@@ -1,0 +1,9 @@
+{
+    "engineering": "공학 계열",
+    "science": "자연과학 계열",
+    "medical": "의료/보건 계열",
+    "business": "경상/경영 계열",
+    "humanities": "인문/사회 계열",
+    "education": "교육 계열",
+    "arts": "예체능 계열"
+}
