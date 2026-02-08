@@ -76,28 +76,32 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
         const majorDataByCat = await readJsonDb('app/api/database/data/major.json');
         const categoryData = await readJsonDb('app/api/database/data/category.json');
 
-        // 모든 계열을 순회하며 전공 ID와 한국어 명칭을 평탄화(Flatten)
-        const flatMajorData: Record<string, string> = {};
+        // 모든 계열을 순회하며 전공 ID와 데이터를 평탄화(Flatten)
+        const flatMajorData: Record<string, { name: string; desc: string }> = {};
         Object.values(majorDataByCat).forEach((majors: any) => {
-            Object.entries(majors).forEach(([id, name]) => {
-                flatMajorData[id] = name as string;
+            Object.entries(majors).forEach(([id, data]) => {
+                flatMajorData[id] = data as { name: string; desc: string };
             });
         });
 
         const sortedCategories = Object.entries(categoryScores)
             .sort((a, b) => b[1] - a[1])
+            .slice(0, 5)
             .map(([id, score]) => ({
                 id,
                 score,
-                name: categoryData[id] || id
+                name: categoryData[id]?.name || id,
+                description: categoryData[id]?.desc || ""
             }));
 
         const sortedMajors = Object.entries(majorScores)
             .sort((a, b) => b[1] - a[1])
+            .slice(0, 5)
             .map(([id, score]) => ({
                 id,
                 score,
-                name: flatMajorData[id] || id
+                name: flatMajorData[id]?.name || id,
+                description: flatMajorData[id]?.desc || ""
             }));
 
         return NextResponse.json({
