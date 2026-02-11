@@ -7,6 +7,6 @@ export const LoginSchema = z.object({
 
 export type LoginState = {
     success: boolean;
+    data?: any;
     message?: string;
-    errors?: Partial<Record<keyof z.infer<typeof LoginSchema>, string[]>>;
 };

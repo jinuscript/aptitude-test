@@ -1,14 +1,14 @@
 'use server';
 
-import { setAuthCookies } from '@/shared/api/setAuthCookies';
 import { cookies } from 'next/headers';
 
 import { HttpError } from '@/shared/api/HttpError';
 import { serverClient } from '@/shared/api/serverClient';
+import { setAuthCookies } from '@/shared/api/setAuthCookies';
 import { LoginSchema, type LoginState } from '../model/loginModel';
 
-const loginAction = async (prevState: LoginState | undefined, formData: FormData): Promise<LoginState | undefined> => {
-    // 1. 로그인 통신
+const loginAction = async (_: LoginState | undefined, formData: FormData): Promise<LoginState | undefined> => {
+    // 입력값 검증
     const rawData = Object.fromEntries(formData.entries());
     const validatedFields = LoginSchema.safeParse(rawData);
 
@@ -21,8 +21,9 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
 
     const { id, password } = validatedFields.data;
 
+    // 로그인 통신
     try {
-        const response = await serverClient('/login', {
+        const result = await serverClient('/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,14 +31,13 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
             body: JSON.stringify({ id, password }),
         });
 
-        // 2. 쿠키 생성
-        const { data: { user, accessToken, refreshToken } } = response;
+        // 쿠키 생성
+        const { data: { user, accessToken, refreshToken } } = result;
 
         if (accessToken && refreshToken) {
             await setAuthCookies(await cookies(), accessToken, refreshToken);
         }
 
-        // 3. 유저 정보 반환
         return {
             success: true,
             data: user
@@ -49,6 +49,7 @@ const loginAction = async (prevState: LoginState | undefined, formData: FormData
                 message: "서비스가 원활하지 않습니다. 잠시 후 다시 시도해주세요."
             };
         }
+
         return {
             success: false,
             message: error.message,
