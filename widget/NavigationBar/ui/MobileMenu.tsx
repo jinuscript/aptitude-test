@@ -11,7 +11,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     if (!isOpen) return null;
 
     return (
-        <nav className="fixed top-0 left-0 w-full h-screen bg-white px-4 md:px-6 py-2 z-60">
+        <nav className="fixed top-0 left-0 w-full h-screen bg-white px-4 md:px-6 py-2">
             <div className="flex justify-between items-center">
                 <Link href="/" className="inline-block text-lg font-bold px-3 py-2">
                     AI TEST
