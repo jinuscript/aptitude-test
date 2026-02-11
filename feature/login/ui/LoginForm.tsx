@@ -1,25 +1,14 @@
 'use client';
 
-import { useState, useEffect, useActionState } from "react";
-import { useRouter } from "next/navigation";
-import { useUserStore } from "@/widget/PrivateNavigation/model/useUserStore";
-import loginAction from "../action/loginAction";
+import { useState } from "react";
+import { useLogin } from "../hook/useLogin";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const [state, action, isPending] = useActionState(loginAction, undefined);
-    const setUser = useUserStore((state) => state.setUser);
-    const { push } = useRouter();
-
-    useEffect(() => {
-        if (state?.success && state?.data) {
-            setUser(state.data);
-            push('/dashboard');
-        }
-    }, [state]);
+    const { state, action, isPending } = useLogin();
 
     return (
-        <form action={action}>
+        <form action={action} className="flex flex-col gap-4">
             {/* 아이디 */}
             <div>
                 <label htmlFor="id">아이디</label>

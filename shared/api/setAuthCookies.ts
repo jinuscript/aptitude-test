@@ -1,5 +1,3 @@
-import 'server-only';
-
 interface CookieStore {
     set: (name: string, value: string, options: any) => void;
 }
