@@ -9,7 +9,6 @@ const TestList = async () => {
 
     return (
         <div>
-            <h1>UserTest</h1>
             {data.map((test: Test) => (
                 <div key={test.testId}>
                     <TestCard test={test}>
