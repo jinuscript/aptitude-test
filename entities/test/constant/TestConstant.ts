@@ -12,3 +12,8 @@ export const STATUS_COLOR: Record<Status, string> = {
     NOT_STARTED: "bg-gray-500 text-white",
 };
 
+export const STATUS_BADGE: Record<Status, string> = {
+    COMPLETED: "완료",
+    IN_PROGRESS: "진행중",
+    NOT_STARTED: "시작전",
+};
