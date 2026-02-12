@@ -1,5 +1,5 @@
 import { serverClient } from "@/shared/api/serverClient";
 
-export const getUserTest = async () => {
+export const getTestList = async () => {
     return await serverClient('/test');
 };

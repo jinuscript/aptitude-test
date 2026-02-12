@@ -1,4 +1,8 @@
-export const createTestRoute = (status: string, code: string, testId: string, currentSection: string) => {
+import { Test } from "../type/TestType";
+
+export const getTestPath = (test: Test) => {
+    const { status, code, testId, currentSection } = test;
+
     if (status === "COMPLETED") {
         return `/result/${code}/${testId}`;
     }
