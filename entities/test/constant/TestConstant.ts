@@ -5,3 +5,10 @@ export const STATUS_TEXT: Record<Status, string> = {
     IN_PROGRESS: "이어하기",
     NOT_STARTED: "시작하기",
 };
+
+export const STATUS_COLOR: Record<Status, string> = {
+    COMPLETED: "bg-green-500 text-white",
+    IN_PROGRESS: "bg-amber-500 text-white",
+    NOT_STARTED: "bg-gray-500 text-white",
+};
+
