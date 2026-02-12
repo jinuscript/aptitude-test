@@ -1,3 +1,5 @@
+import { type Code } from "@/shared/types/Code";
+
 export interface Test {
     testId: string;
     userId: string;
@@ -12,5 +14,3 @@ export interface Test {
 export type Section = "STRENGTH" | "INTEREST" | "CHARACTER" | "VALUE" | "KNOWLEDGE";
 
 export type Status = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
-
-export type Code = "ELM" | "MID" | "HIGH";
