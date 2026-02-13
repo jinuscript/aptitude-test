@@ -20,8 +20,10 @@ const Modal = ({ children }: { children: ReactNode }) => {
     if (!modalRoot) return null;
 
     return createPortal(
-        <div>
-            {children}
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+                {children}
+            </div>
         </div>,
         modalRoot
     );
