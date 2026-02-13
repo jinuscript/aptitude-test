@@ -26,6 +26,8 @@ export default function RootLayout({
         <TanstackQueryProvider>
           {children}
         </TanstackQueryProvider>
+
+        <div id="modal-root" />
       </body>
     </html>
   );
