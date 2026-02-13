@@ -16,12 +16,13 @@ export const purchaseTestAction = async (code: Code) => {
         });
 
         return {
-            success: true
+            success: true,
+            message: '상품 구매에 성공했습니다.'
         };
     } catch (error) {
-        console.error('Error ordering product:', error);
         return {
-            success: false
+            success: false,
+            message: '상품 구매에 실패했습니다.'
         }
     }
 };
