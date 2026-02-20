@@ -49,10 +49,27 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         const accessToken = getAccessToken(request);
 
         // 액세스 토큰 검증
-        await verifyAccessToken(accessToken);
+        const { user_id: userId } = await verifyAccessToken(accessToken);
 
         // 사용자 답변 저장
         const allTests = await readJsonDb('app/api/database/data/test-answers.json');
+
+        // 테스트 답변이 없으면 생성
+        if (!allTests[id]) {
+            allTests[id] = {
+                userId: userId,
+                testId: id,
+                answers: {
+                    STRENGTH: [],
+                    INTEREST: [],
+                    PERSONALITY: [],
+                    VALUE: [],
+                    KNOWLEDGE: [],
+                }
+            }
+        }
+
+        // 테스트 답변 업데이트
         allTests[id].answers[current] = userAnswers;
         await writeJsonDb('app/api/database/data/test-answers.json', allTests);
 
