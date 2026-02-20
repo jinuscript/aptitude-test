@@ -1,10 +1,10 @@
-import ProductList from "@/feature/purchase-test/ui/ProductList";
+import ProductCatalog from "@/widget/ProductCatalog/ui/ProductCatalog";
 
 const PurchasePage = () => {
     return (
         <main>
             <h1>상품 구매</h1>
-            <ProductList />
+            <ProductCatalog />
         </main>
     );
 };

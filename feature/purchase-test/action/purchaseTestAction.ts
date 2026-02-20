@@ -1,8 +1,9 @@
 "use server";
 
 import { serverClient } from "@/shared/api/serverClient";
+import { type Code } from "@/shared/types/Code";
 
-export const orderAction = async (code: string) => {
+export const purchaseTestAction = async (code: Code) => {
     try {
         await serverClient('/order', {
             method: 'POST',
@@ -15,12 +16,13 @@ export const orderAction = async (code: string) => {
         });
 
         return {
-            success: true
+            success: true,
+            message: '상품 구매에 성공했습니다.'
         };
     } catch (error) {
-        console.error('Error ordering product:', error);
         return {
-            success: false
+            success: false,
+            message: '상품 구매에 실패했습니다.'
         }
     }
 };

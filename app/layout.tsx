@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "@/shared/styles/globals.css";
 import TanstackQueryProvider from "@/shared/provider/TanstackQueryProvider";
+import GlobalModal from "@/shared/ui/GlobalModal";
 
 export const metadata: Metadata = {
   title: "AI 적성검사",
@@ -25,7 +26,11 @@ export default function RootLayout({
       <body className="font-pretendard">
         <TanstackQueryProvider>
           {children}
+          <GlobalModal />
         </TanstackQueryProvider>
+
+
+        <div id="modal-root" />
       </body>
     </html>
   );
