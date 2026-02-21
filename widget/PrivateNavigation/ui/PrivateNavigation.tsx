@@ -4,15 +4,29 @@ import LogoutButton from "@/feature/logout/ui/LogoutButton";
 
 const PrivateNavigation = () => {
     return (
-        <nav className="flex justify-between items-center max-w-[1140px] mx-auto px-4 md:px-6 lg:px-8 py-2">
+        <nav className="flex flex-col justify-between p-4 border-r border-gray-200">
             {/* 대시보드 */}
-            <Link href="/dashboard" className="inline-block text-lg font-medium px-3 py-2">AI TEST</Link>
+            <div className="flex flex-col gap-4">
+                <Link href="/dashboard" className="inline-block text-2xl font-bold">AI TEST</Link>
+
+                <ul className="flex flex-col gap-2">
+                    <li className="py-2 px-2 rounded-lg cursor-pointer hover:bg-amber-50">프로필</li>
+                    <li className="py-2 px-2 rounded-lg cursor-pointer hover:bg-amber-50">대시보드</li>
+                    <li className="py-2 px-2 rounded-lg cursor-pointer hover:bg-amber-50">검사구매</li>
+                </ul>
+            </div>
+
+            <ul className="flex flex-col gap-2">
+                <li className="py-2 px-2 rounded-lg cursor-pointer hover:bg-amber-50">환경설정</li>
+                <li className="py-2 px-2 rounded-lg cursor-pointer">
+                    <LogoutButton />
+                </li>
+            </ul>
 
             {/* 유저 프로필 */}
-            <UserProfile />
+            {/* <UserProfile /> */}
 
             {/* 로그아웃 버튼 */}
-            <LogoutButton />
         </nav>
     );
 };
