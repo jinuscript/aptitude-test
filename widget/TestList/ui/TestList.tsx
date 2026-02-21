@@ -1,8 +1,8 @@
-import TestCard from "./TestCard";
-import TestLink from "./TestLink";
+import TestCard from "@/entities/test/ui/TestCard";
+import TestLink from "@/entities/test/ui/TestLink";
 
-import { Test } from "../type/TestType";
-import { getTestList } from "../api/getTestList";
+import { Test } from "@/entities/test/type/TestType";
+import { getTestList } from "@/entities/test/api/getTestList";
 
 const TestList = async () => {
     const { data } = await getTestList();
