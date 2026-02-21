@@ -8,7 +8,7 @@ const TestSummary = async () => {
     const { inProgressCount, completedCount, totalCount } = calculateTestCount(data);
 
     return (
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-3 gap-4">
             <TestSummaryCard type="IN_PROGRESS" count={inProgressCount} />
             <TestSummaryCard type="COMPLETED" count={completedCount} />
             <TestSummaryCard type="TOTAL" count={totalCount} />
