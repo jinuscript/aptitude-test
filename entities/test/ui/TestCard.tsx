@@ -12,7 +12,7 @@ const TestCard = ({ test, children }: { test: Test; children: ReactNode }) => {
         <div className="py-2 px-3 border border-gray-200 rounded-lg flex flex-col gap-4">
             {/* 제목 */}
             <div className="flex justify-between items-center">
-                <h2>{name}</h2>
+                <h2 className="text-lg font-medium">{name}</h2>
                 <TestStatusBadge status={status} />
             </div>
 
