@@ -3,7 +3,7 @@ import TestSummary from "@/widget/TestSummary/ui/TestSummary";
 
 export default async function DashboardPage() {
     return (
-        <main className="flex flex-col gap-8 min-h-screen">
+        <main className="flex flex-col gap-8">
             {/* 페이지 제목 */}
             <header>
                 <h1 className="text-2xl font-bold">대시보드</h1>
