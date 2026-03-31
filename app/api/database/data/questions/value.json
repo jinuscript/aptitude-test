@@ -1,0 +1,170 @@
+{
+    "questions": [
+        {
+            "id": "V1",
+            "category": "가치",
+            "question": "나의 재능을 통해 사회적 약자를 돕고 공익을 실현하는 것이 중요한가요?",
+            "weights": {
+                "education": 2,
+                "medical": 2,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "social_welfare_policy": 3,
+                "special_needs_edu": 3,
+                "public_health_admin": 2
+            }
+        },
+        {
+            "id": "V2",
+            "category": "가치",
+            "question": "높은 연봉이나 경제적 보상이 전공 선택의 최우선 순위인가요?",
+            "weights": {
+                "business": 2,
+                "engineering": 1,
+                "medical": 1
+            },
+            "sub_weights": {
+                "econ_finance": 3,
+                "robot_mobility": 2,
+                "clinical_medicine": 2
+            }
+        },
+        {
+            "id": "V3",
+            "category": "가치",
+            "question": "창의성을 발휘하여 세상에 없던 새로운 것을 만들어내고 싶은가요?",
+            "weights": {
+                "arts": 2,
+                "engineering": 2
+            },
+            "sub_weights": {
+                "visual_fine_arts": 3,
+                "sw_security": 3,
+                "design_industrial": 3
+            }
+        },
+        {
+            "id": "V4",
+            "category": "가치",
+            "question": "고용의 안정성이 보장되는 전문직이나 공직 진출을 희망하나요?",
+            "weights": {
+                "medical": 2,
+                "education": 2,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "clinical_medicine": 2,
+                "primary_child_edu": 3,
+                "law_politics": 3
+            }
+        },
+        {
+            "id": "V5",
+            "category": "가치",
+            "question": "개인의 삶과 업무의 균형(워라밸)을 지키는 것이 가장 중요한가요?",
+            "weights": {
+                "humanities": 1,
+                "education": 1
+            },
+            "sub_weights": {
+                "hist_philosophy": 3,
+                "psych_counseling": 2,
+                "primary_child_edu": 2
+            }
+        },
+        {
+            "id": "V6",
+            "category": "가치",
+            "question": "한 분야의 독보적인 전문가로서 권위와 명예를 얻고 싶은가요?",
+            "weights": {
+                "medical": 2,
+                "science": 2,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "clinical_medicine": 2,
+                "pure_math_physics": 3,
+                "law_politics": 2
+            }
+        },
+        {
+            "id": "V7",
+            "category": "가치",
+            "question": "지속 가능한 지구를 위한 환경 보호나 에너지 문제에 기여하고 싶나요?",
+            "weights": {
+                "science": 2,
+                "engineering": 2
+            },
+            "sub_weights": {
+                "earth_ocean_env": 3,
+                "energy_chem": 3,
+                "bio_life_science": 2
+            }
+        },
+        {
+            "id": "V8",
+            "category": "가치",
+            "question": "전 세계를 무대로 활동하며 다양한 문화를 경험하고 싶은가요?",
+            "weights": {
+                "business": 2,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "startup_trade": 3,
+                "law_politics": 2,
+                "mkt_media": 2
+            }
+        },
+        {
+            "id": "V9",
+            "category": "가치",
+            "question": "끊임없이 새로운 것을 배우고 지적으로 성장하는 삶을 원하나요?",
+            "weights": {
+                "science": 2,
+                "humanities": 2
+            },
+            "sub_weights": {
+                "hist_philosophy": 2,
+                "pure_math_physics": 3,
+                "bio_life_science": 2
+            }
+        },
+        {
+            "id": "V10",
+            "category": "가치",
+            "question": "사람들에게 즐거움이나 감동을 주는 일을 하고 싶은가요?",
+            "weights": {
+                "arts": 2,
+                "education": 1
+            },
+            "sub_weights": {
+                "ent_planning": 3,
+                "subject_special_edu": 2,
+                "media_content": 3
+            }
+        }
+    ],
+    "options": [
+        {
+            "value": 1,
+            "label": "전혀 그렇지 않다"
+        },
+        {
+            "value": 2,
+            "label": "그렇지 않다"
+        },
+        {
+            "value": 3,
+            "label": "보통이다"
+        },
+        {
+            "value": 4,
+            "label": "그렇다"
+        },
+        {
+            "value": 5,
+            "label": "매우 그렇다"
+        }
+    ]
+}

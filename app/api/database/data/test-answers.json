@@ -1,0 +1,218 @@
+{
+  "c60f45ad-4475-4edc-aa8c-c145c66e3723": {
+    "userId": "770ce4c4-f51d-4430-8f5b-ae21bb32c43d",
+    "testId": "c60f45ad-4475-4edc-aa8c-c145c66e3723",
+    "answers": {
+      "STRENGTH": [
+        {
+          "id": "S1",
+          "value": 2
+        },
+        {
+          "id": "S2",
+          "value": 2
+        },
+        {
+          "id": "S3",
+          "value": 3
+        },
+        {
+          "id": "S4",
+          "value": 3
+        },
+        {
+          "id": "S5",
+          "value": 2
+        },
+        {
+          "id": "S6",
+          "value": 3
+        },
+        {
+          "id": "S7",
+          "value": 3
+        },
+        {
+          "id": "S8",
+          "value": 2
+        },
+        {
+          "id": "S9",
+          "value": 2
+        },
+        {
+          "id": "S10",
+          "value": 3
+        }
+      ],
+      "INTEREST": [
+        {
+          "id": "I1",
+          "value": 2
+        },
+        {
+          "id": "I2",
+          "value": 3
+        },
+        {
+          "id": "I3",
+          "value": 3
+        },
+        {
+          "id": "I4",
+          "value": 3
+        },
+        {
+          "id": "I5",
+          "value": 3
+        },
+        {
+          "id": "I6",
+          "value": 2
+        },
+        {
+          "id": "I7",
+          "value": 2
+        },
+        {
+          "id": "I8",
+          "value": 2
+        },
+        {
+          "id": "I9",
+          "value": 3
+        },
+        {
+          "id": "I10",
+          "value": 3
+        }
+      ],
+      "PERSONALITY": [
+        {
+          "id": "P1",
+          "value": 3
+        },
+        {
+          "id": "P2",
+          "value": 2
+        },
+        {
+          "id": "P3",
+          "value": 3
+        },
+        {
+          "id": "P4",
+          "value": 3
+        },
+        {
+          "id": "P5",
+          "value": 2
+        },
+        {
+          "id": "P6",
+          "value": 2
+        },
+        {
+          "id": "P7",
+          "value": 2
+        },
+        {
+          "id": "P8",
+          "value": 2
+        },
+        {
+          "id": "P9",
+          "value": 3
+        },
+        {
+          "id": "P10",
+          "value": 2
+        }
+      ],
+      "VALUE": [
+        {
+          "id": "V1",
+          "value": 2
+        },
+        {
+          "id": "V2",
+          "value": 3
+        },
+        {
+          "id": "V3",
+          "value": 2
+        },
+        {
+          "id": "V4",
+          "value": 3
+        },
+        {
+          "id": "V5",
+          "value": 2
+        },
+        {
+          "id": "V6",
+          "value": 2
+        },
+        {
+          "id": "V7",
+          "value": 2
+        },
+        {
+          "id": "V8",
+          "value": 2
+        },
+        {
+          "id": "V9",
+          "value": 2
+        },
+        {
+          "id": "V10",
+          "value": 3
+        }
+      ],
+      "KNOWLEDGE": [
+        {
+          "id": "K1",
+          "value": 3
+        },
+        {
+          "id": "K2",
+          "value": 2
+        },
+        {
+          "id": "K3",
+          "value": 3
+        },
+        {
+          "id": "K4",
+          "value": 3
+        },
+        {
+          "id": "K5",
+          "value": 3
+        },
+        {
+          "id": "K6",
+          "value": 3
+        },
+        {
+          "id": "K7",
+          "value": 2
+        },
+        {
+          "id": "K8",
+          "value": 3
+        },
+        {
+          "id": "K9",
+          "value": 3
+        },
+        {
+          "id": "K10",
+          "value": 2
+        }
+      ]
+    }
+  }
+}

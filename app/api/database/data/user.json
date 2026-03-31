@@ -1,0 +1,10 @@
+[
+    {
+        "id": "770ce4c4-f51d-4430-8f5b-ae21bb32c43d",
+        "user_id": "user",
+        "password": "12345678",
+        "role": "USER",
+        "name": "사용자",
+        "phone_number": "01012345678"
+    }
+]

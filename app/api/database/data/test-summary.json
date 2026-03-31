@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "testId": "c60f45ad-4475-4edc-aa8c-c145c66e3723",
+      "userId": "user",
+      "code": "ELM",
+      "name": "초등학생 테스트",
+      "currentSection": null,
+      "sectionList": [
+        "STRENGTH",
+        "INTEREST",
+        "PERSONALITY",
+        "VALUE",
+        "KNOWLEDGE"
+      ],
+      "purchaseDate": "2026-01-27T12:16:57+09:00",
+      "status": "COMPLETED"
+    }
+  ]
+}

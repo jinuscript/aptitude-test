@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "초등학생 테스트",
+        "code": "ELM",
+        "price": 10000,
+        "sectionList": [
+            "STRENGTH",
+            "INTEREST",
+            "PERSONALITY",
+            "VALUE",
+            "KNOWLEDGE"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "중학생 테스트",
+        "code": "MID",
+        "price": 20000,
+        "sectionList": [
+            "STRENGTH",
+            "INTEREST",
+            "PERSONALITY",
+            "VALUE",
+            "KNOWLEDGE"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "고등학생 테스트",
+        "code": "HIGH",
+        "price": 30000,
+        "sectionList": [
+            "STRENGTH",
+            "INTEREST",
+            "PERSONALITY",
+            "VALUE",
+            "KNOWLEDGE"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "성인 테스트",
+        "code": "AD",
+        "price": 40000,
+        "sectionList": [
+            "STRENGTH",
+            "INTEREST",
+            "PERSONALITY",
+            "VALUE",
+            "KNOWLEDGE"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "유아 테스트",
+        "code": "TOD",
+        "price": 50000,
+        "sectionList": [
+            "STRENGTH",
+            "INTEREST",
+            "PERSONALITY",
+            "VALUE",
+            "KNOWLEDGE"
+        ]
+    }
+]

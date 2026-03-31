@@ -1,0 +1,1 @@
+export type Code = "ELM" | "MID" | "HIGH";

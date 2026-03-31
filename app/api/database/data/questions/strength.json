@@ -1,0 +1,175 @@
+{
+    "questions": [
+        {
+            "id": "S1",
+            "category": "역량",
+            "question": "복잡한 수식이나 데이터를 해석하고 패턴을 찾아내는 것이 수월한가요?",
+            "weights": {
+                "engineering": 2,
+                "science": 2,
+                "business": 1
+            },
+            "sub_weights": {
+                "ai_data": 3,
+                "pure_math_physics": 3,
+                "data_accounting": 3,
+                "econ_finance": 2
+            }
+        },
+        {
+            "id": "S2",
+            "category": "역량",
+            "question": "자신의 생각을 글이나 말로 논리 정연하게 전달하는 데 자신이 있나요?",
+            "weights": {
+                "humanities": 2,
+                "education": 1,
+                "business": 1
+            },
+            "sub_weights": {
+                "law_politics": 3,
+                "media_sociology": 3,
+                "primary_child_edu": 2,
+                "mkt_media": 2
+            }
+        },
+        {
+            "id": "S3",
+            "category": "역량",
+            "question": "처음 보는 기계나 도구의 작동 원리를 빠르게 파악하는 편인가요?",
+            "weights": {
+                "engineering": 2,
+                "arts": 1
+            },
+            "sub_weights": {
+                "robot_mobility": 3,
+                "energy_chem": 2,
+                "design_industrial": 2
+            }
+        },
+        {
+            "id": "S4",
+            "category": "역량",
+            "question": "외국어나 새로운 언어 체계를 습득하는 속도가 남들보다 빠른가요?",
+            "weights": {
+                "humanities": 2,
+                "business": 1
+            },
+            "sub_weights": {
+                "lang_literature": 3,
+                "startup_trade": 3,
+                "law_politics": 1
+            }
+        },
+        {
+            "id": "S5",
+            "category": "역량",
+            "question": "갈등이 생긴 상황에서 중재자 역할을 맡아 원만하게 해결하곤 하나요?",
+            "weights": {
+                "education": 2,
+                "humanities": 1,
+                "business": 1
+            },
+            "sub_weights": {
+                "social_welfare_policy": 3,
+                "psych_counseling": 2,
+                "biz_mgmt_strategy": 2
+            }
+        },
+        {
+            "id": "S6",
+            "category": "역량",
+            "question": "정해진 시간 내에 여러 업무의 우선순위를 정해 효율적으로 처리하나요?",
+            "weights": {
+                "business": 2,
+                "engineering": 1
+            },
+            "sub_weights": {
+                "biz_mgmt_strategy": 3,
+                "ai_data": 2,
+                "data_accounting": 2
+            }
+        },
+        {
+            "id": "S7",
+            "category": "역량",
+            "question": "추상적인 아이디어를 그림, 도표, 형태 등으로 구체화하는 능력이 있나요?",
+            "weights": {
+                "arts": 2,
+                "engineering": 1
+            },
+            "sub_weights": {
+                "design_industrial": 3,
+                "space_archi": 3,
+                "media_content": 2
+            }
+        },
+        {
+            "id": "S8",
+            "category": "역량",
+            "question": "다른 사람의 감정을 빠르게 캐치하고 그에 적절하게 반응하나요?",
+            "weights": {
+                "medical": 2,
+                "education": 1,
+                "humanities": 1
+            },
+            "sub_weights": {
+                "nursing_care": 3,
+                "psych_counseling": 3,
+                "counseling_psych_edu": 3
+            }
+        },
+        {
+            "id": "S9",
+            "category": "역량",
+            "question": "방대한 양의 정보를 요약하고 핵심을 짚어내는 것에 능숙한가요?",
+            "weights": {
+                "humanities": 2,
+                "business": 1,
+                "science": 1
+            },
+            "sub_weights": {
+                "hist_philosophy": 3,
+                "law_politics": 3,
+                "econ_finance": 2,
+                "bio_life_science": 1
+            }
+        },
+        {
+            "id": "S10",
+            "category": "역량",
+            "question": "예상치 못한 문제가 발생했을 때 당황하지 않고 대안을 찾아내나요?",
+            "weights": {
+                "engineering": 2,
+                "business": 1,
+                "medical": 1
+            },
+            "sub_weights": {
+                "sw_security": 2,
+                "clinical_medicine": 3,
+                "biz_mgmt_strategy": 2
+            }
+        }
+    ],
+    "options": [
+        {
+            "value": 1,
+            "label": "전혀 그렇지 않다"
+        },
+        {
+            "value": 2,
+            "label": "그렇지 않다"
+        },
+        {
+            "value": 3,
+            "label": "보통이다"
+        },
+        {
+            "value": 4,
+            "label": "그렇다"
+        },
+        {
+            "value": 5,
+            "label": "매우 그렇다"
+        }
+    ]
+}
